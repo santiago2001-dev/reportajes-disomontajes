@@ -7,6 +7,7 @@ package vistas;
 
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import reportes.leePlantilla;
 
 /**
  *
@@ -127,6 +128,11 @@ public class home extends javax.swing.JFrame {
 
         jRadioButtonMenuItem2.setSelected(true);
         jRadioButtonMenuItem2.setText("SubirPlantilla");
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
         ussuariosbtn.add(jRadioButtonMenuItem2);
 
         menuPprincipal.add(ussuariosbtn);
@@ -161,10 +167,14 @@ public class home extends javax.swing.JFrame {
                 }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-System.out.println("holaa");
         adminUsers a = new adminUsers();
             a.setVisible(true);
             this.setVisible(false);    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+        leePlantilla leer  = new leePlantilla();
+        leer.leeDoc();
+    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
