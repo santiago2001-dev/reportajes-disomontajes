@@ -5,8 +5,12 @@
  */
 package vistas;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import reportes.leePlantilla;
 
 /**
@@ -16,17 +20,11 @@ import reportes.leePlantilla;
 public class home extends javax.swing.JFrame {
 
    
-    
+
     public home() {
         initComponents();
-         int ancho =  Toolkit.getDefaultToolkit().getScreenSize().width;
-          int alto =  Toolkit.getDefaultToolkit().getScreenSize().height;
-          barra.setFloatable(false);
-          barra.setSize(ancho, 40);
-          fondo.setSize(ancho,alto);
-        
-           this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+         this.setLocationRelativeTo(null);
+     
      }
 
     /**
@@ -42,18 +40,14 @@ public class home extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        barra = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        fondo = new javax.swing.JDesktopPane();
+        usersAdmin = new javax.swing.JButton();
+        crearInforme = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         menuPprincipal = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        ussuariosbtn = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu9 = new javax.swing.JMenu();
 
         jMenu4.setText("File");
         jMenuBar1.add(jMenu4);
@@ -63,89 +57,56 @@ public class home extends javax.swing.JFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
-
-        barra.setRollover(true);
-
         jButton1.setText("jButton1");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        usersAdmin.setText("USUARIOS");
+        usersAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                usersAdminActionPerformed(evt);
             }
         });
-        barra.add(jButton1);
+        getContentPane().add(usersAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 120, 50));
 
-        jButton2.setText("jButton2");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        barra.add(jButton2);
+        crearInforme.setText("CREAR INFORME");
+        crearInforme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearInformeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(crearInforme, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 140, 50));
 
-        getContentPane().add(barra);
-        barra.setBounds(0, 0, 610, 70);
+        jButton5.setText("VER INFORMES");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 120, 50));
 
-        javax.swing.GroupLayout fondoLayout = new javax.swing.GroupLayout(fondo);
-        fondo.setLayout(fondoLayout);
-        fondoLayout.setHorizontalGroup(
-            fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-        fondoLayout.setVerticalGroup(
-            fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("SISTEMA DE REPORTES");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 170, 40));
 
-        getContentPane().add(fondo);
-        fondo.setBounds(0, 70, 580, 330);
-
-        jMenu1.setText("File");
+        jMenu1.setText("ajustes");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
             }
         });
-        menuPprincipal.add(jMenu1);
-
-        ussuariosbtn.setText("Seguridad");
-        ussuariosbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ussuariosbtnActionPerformed(evt);
-            }
-        });
 
         jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Usuarios");
+        jRadioButtonMenuItem1.setText("salir");
         jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonMenuItem1ActionPerformed(evt);
             }
         });
-        ussuariosbtn.add(jRadioButtonMenuItem1);
+        jMenu1.add(jRadioButtonMenuItem1);
 
-        jRadioButtonMenuItem2.setSelected(true);
-        jRadioButtonMenuItem2.setText("SubirPlantilla");
-        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem2ActionPerformed(evt);
-            }
-        });
-        ussuariosbtn.add(jRadioButtonMenuItem2);
-
-        menuPprincipal.add(ussuariosbtn);
-
-        jMenu7.setText("Informe");
-
-        jMenu8.setText("Ver Informes");
-        jMenu7.add(jMenu8);
-
-        jMenu9.setText("Descargar Plantilla");
-        jMenu7.add(jMenu9);
-
-        menuPprincipal.add(jMenu7);
+        menuPprincipal.add(jMenu1);
 
         setJMenuBar(menuPprincipal);
 
@@ -155,26 +116,26 @@ public class home extends javax.swing.JFrame {
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
     }//GEN-LAST:event_jMenu1ActionPerformed
 
-    private void ussuariosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ussuariosbtnActionPerformed
-    }//GEN-LAST:event_ussuariosbtnActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        System.out.println("holaa");
-        adminUsers a = new adminUsers();
+    private void usersAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersAdminActionPerformed
+            adminUsers a = new adminUsers();
             a.setVisible(true);
             this.setVisible(false);
-                }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_usersAdminActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-        adminUsers a = new adminUsers();
-            a.setVisible(true);
-            this.setVisible(false);    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
-    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
-        leePlantilla leer  = new leePlantilla();
-        leer.leeDoc();
-    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+    private void crearInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearInformeActionPerformed
+        plantillas p = new plantillas();
+        p.setVisible(true);
+          this.setVisible(false);
+        
+    }//GEN-LAST:event_crearInformeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,23 +171,33 @@ public class home extends javax.swing.JFrame {
             }
         });
     }
+    
+        class FondoPanel extends JPanel {
+
+        private Image image = new ImageIcon("/vistas/Designer.jpeg").getImage();
+
+        @Override
+        public void paint(Graphics g) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToolBar barra;
-    private javax.swing.JDesktopPane fondo;
+    private javax.swing.JButton crearInforme;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JMenuBar menuPprincipal;
-    private javax.swing.JMenu ussuariosbtn;
+    private javax.swing.JButton usersAdmin;
     // End of variables declaration//GEN-END:variables
 }

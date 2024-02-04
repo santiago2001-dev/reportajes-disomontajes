@@ -5,31 +5,39 @@
  */
 package vistas;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import reportes.conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author User
  */
 public class login extends javax.swing.JFrame {
-    
+
     conexion con;
 
-    /**
-     * Creates new form login
-     */
+    fondoPanel fondo = new fondoPanel();
+
     public login() {
+        this.setContentPane(fondo);
+
         initComponents();
-      
-      con  = new conexion();
-      con.conectar();
-     
+
+        this.setLocationRelativeTo(null);
+
+        con = new conexion();
+        con.conectar();
+
     }
 
     /**
@@ -65,28 +73,30 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 183, 53));
 
+        btnEnviar.setBackground(new java.awt.Color(153, 153, 153));
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 98, 44));
+        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 98, 50));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 180, 50));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 170, 50));
 
+        btnCancelar.setBackground(new java.awt.Color(153, 153, 153));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 100, 50));
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 100, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,9 +106,9 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        String user  = txtUser.getText();
-        String pass  = String.valueOf(txtPassword.getPassword());
-        String sql = "SELECT * FROM users WHERE password = '"+pass+"' and userName = '"+user+"' ";
+        String user = txtUser.getText();
+        String pass = String.valueOf(txtPassword.getPassword());
+        String sql = "SELECT * FROM users WHERE password = '" + pass + "' and userName = '" + user + "' ";
 
         try (PreparedStatement statement = con.conectar().prepareStatement(sql)) {
             // Establecer parámetros de la consulta
@@ -106,20 +116,20 @@ public class login extends javax.swing.JFrame {
             // Ejecutar la consulta y obtener el resultado
             try (ResultSet resultSet = statement.executeQuery()) {
                 // Procesar el resultado
-               if(resultSet.next()){
-                   JOptionPane.showMessageDialog(null,"Bienvenido "+user.toLowerCase());
-                   progreso p =  new progreso();
-                   p.setVisible(true);
-                   this.setVisible(false);
-               
-               }else{
-                   JOptionPane.showMessageDialog(this, "usuario incorrecto");
-               }
+                if (resultSet.next()) {
+                    JOptionPane.showMessageDialog(null, "Bienvenido " + user.toLowerCase());
+                    progreso p = new progreso();
+                    p.setVisible(true);
+                    this.setVisible(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "usuario incorrecto");
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    
+
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -164,6 +174,21 @@ public class login extends javax.swing.JFrame {
             }
         });
     }
+
+    class fondoPanel extends JPanel {
+
+        private Image image = new ImageIcon("Designer.jpeg").getImage();
+
+        @Override
+        public void paint(Graphics g) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+
+        }
+
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
