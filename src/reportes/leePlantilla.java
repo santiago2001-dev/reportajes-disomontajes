@@ -10,14 +10,19 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Random;
 
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.util.Units;
 
 public class leePlantilla {
 
@@ -50,7 +55,7 @@ public class leePlantilla {
         switch (infoDoc.get(0)) {
             case "perforacion":
         try {
-
+                System.out.println(infoDoc.get(31));
                 FileInputStream fis = new FileInputStream("src/plantillas/perforacion.docx");
                 XWPFDocument document = new XWPFDocument(fis);
 
@@ -81,12 +86,25 @@ public class leePlantilla {
                 replaceText(document, "celAsis", infoDoc.get(25));
                 replaceText(document, "nameInspect", infoDoc.get(26));
                 replaceText(document, "celInspect", infoDoc.get(27));
-                FileOutputStream fos = new FileOutputStream(path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx");
+                replaceText(document, "Perf1", infoDoc.get(28));
+                replaceText(document, "Wk1", infoDoc.get(29));
+                replaceText(document, "Perf2", infoDoc.get(30));
+                replaceText(document, "Wk2", infoDoc.get(31));
+                replaceText(document, "Perf3", infoDoc.get(32));
+                replaceText(document, "Wk3", infoDoc.get(33));
+                replaceText(document, "Perf4", infoDoc.get(34));
+                replaceText(document, "Wk4", infoDoc.get(35));
+                String nameFile = path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx";
+                FileOutputStream fos = new FileOutputStream(nameFile);
                 document.write(fos);
 
                 fis.close();
                 fos.close();
+                
+                   //poner vista de cargafr imagen y llamar la funcion cuando se nececite
+                insertImageWithApachePOI(nameFile, "Designer.jpeg","idimgDos");
                 System.out.println("docuemento editado con exito");
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -132,6 +150,40 @@ public class leePlantilla {
                 System.out.println("Invalid day");
         }
 
+    }
+
+   public static void insertImageWithApachePOI(String existingDocumentPath, String imagePath, String keyword) throws IOException {
+        try (FileInputStream fis = new FileInputStream(existingDocumentPath)) {
+            XWPFDocument doc = new XWPFDocument(fis);
+
+            // Recorremos los párrafos en busca de la palabra clave
+            for (XWPFParagraph paragraph : doc.getParagraphs()) {
+                List<XWPFRun> runs = paragraph.getRuns();
+                for (int i = 0; i < runs.size(); i++) {
+                    XWPFRun run = runs.get(i);
+                    String text = run.getText(0);
+                    if (text != null && text.contains(keyword)) {
+                        // Borramos la palabra clave existente
+                        run.setText("", 0);
+
+                        // Insertamos la imagen en lugar de la palabra clave
+                        FileInputStream imageStream = new FileInputStream(imagePath);
+                        try {
+                            run.addPicture(imageStream, XWPFDocument.PICTURE_TYPE_JPEG, imagePath, Units.toEMU(200), Units.toEMU(200));
+                        } catch (InvalidFormatException ex) {
+                            Logger.getLogger(leePlantilla.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        imageStream.close();
+                    }
+                }
+            }
+
+            try (FileOutputStream fos = new FileOutputStream(existingDocumentPath)) {
+                doc.write(fos);
+            }
+
+            System.out.println("Documento editado exitosamente: " + existingDocumentPath);
+        }
     }
 
     private static void replaceText(XWPFDocument document, String oldText, String newText) {
