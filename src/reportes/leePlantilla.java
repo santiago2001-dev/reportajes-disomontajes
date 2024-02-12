@@ -94,6 +94,18 @@ public class leePlantilla {
                 replaceText(document, "Wk3", infoDoc.get(33));
                 replaceText(document, "Perf4", infoDoc.get(34));
                 replaceText(document, "Wk4", infoDoc.get(35));
+                
+                
+                replaceText(document, "VSEH1", infoDoc.get(36));
+                replaceText(document, "IVSEH2", infoDoc.get(37));
+                replaceText(document, "IVSEH3", infoDoc.get(38));
+                replaceText(document, "IVSEH4", infoDoc.get(39));
+                
+                replaceText(document, "ICFR1", infoDoc.get(40));
+                replaceText(document, "ICFR2", infoDoc.get(41));
+                replaceText(document, "ICFR3", infoDoc.get(42));
+                replaceText(document, "ICFR4", infoDoc.get(43));
+               
                 String nameFile = path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx";
                 FileOutputStream fos = new FileOutputStream(nameFile);
                 document.write(fos);

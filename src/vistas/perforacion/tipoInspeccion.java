@@ -18,6 +18,8 @@ public class tipoInspeccion extends javax.swing.JFrame {
      */
     public tipoInspeccion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -385,12 +387,14 @@ public class tipoInspeccion extends javax.swing.JFrame {
                 wkNacio1 = wkNacio1Txt.getText(),
                 wkInter2 = wkInter2txt.getText();
 
-        String datos[] = {perNac1,wkNacio1,perInter1,wkInter1,perNAci2,wkNAci2,perfInter2,wkInter2 };
-     
-        leePlantilla l = leePlantilla.obtenerInstancia();
+        String datos[] = {perNac1, wkNacio1, perInter1, wkInter1, perNAci2, wkNAci2, perfInter2, wkInter2};
 
+        leePlantilla l = leePlantilla.obtenerInstancia();
         l.capturarDatosPerforacion(datos);
-        l.llamadoDatos();
+         this.setVisible(false);
+        tipoInsepeccionTwo i  = new tipoInsepeccionTwo();
+        i.setVisible(true);
+
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
