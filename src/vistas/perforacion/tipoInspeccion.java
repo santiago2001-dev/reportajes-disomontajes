@@ -58,7 +58,6 @@ public class tipoInspeccion extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         nextbtn = new javax.swing.JButton();
-        volverbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,17 +158,10 @@ public class tipoInspeccion extends javax.swing.JFrame {
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("WK");
 
-        nextbtn.setText("siguiente");
+        nextbtn.setText("guardar");
         nextbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextbtnActionPerformed(evt);
-            }
-        });
-
-        volverbtn.setText("volver");
-        volverbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volverbtnActionPerformed(evt);
             }
         });
 
@@ -232,7 +224,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
                                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,8 +238,6 @@ public class tipoInspeccion extends javax.swing.JFrame {
                                                 .addComponent(wkInter2txt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(38, 38, 38))))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(volverbtn)
-                                        .addGap(65, 65, 65)
                                         .addComponent(nextbtn)
                                         .addGap(285, 285, 285))))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -329,9 +319,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
                         .addGap(23, 82, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nextbtn)
-                            .addComponent(volverbtn))
+                        .addComponent(nextbtn)
                         .addGap(32, 32, 32))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -413,12 +401,6 @@ public class tipoInspeccion extends javax.swing.JFrame {
 
     }//GEN-LAST:event_nextbtnActionPerformed
 
-    private void volverbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverbtnActionPerformed
-        this.setVisible(false);
-        infoPerforacion i = new infoPerforacion();
-        i.setVisible(true);
-    }//GEN-LAST:event_volverbtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -479,7 +461,6 @@ public class tipoInspeccion extends javax.swing.JFrame {
     private javax.swing.JTextField perNAci2Txt;
     private javax.swing.JTextField perNac1txt;
     private javax.swing.JTextField perfInter2txt;
-    private javax.swing.JButton volverbtn;
     private javax.swing.JTextField wkInter1Txt;
     private javax.swing.JTextField wkInter2txt;
     private javax.swing.JTextField wkNAci2Txt;

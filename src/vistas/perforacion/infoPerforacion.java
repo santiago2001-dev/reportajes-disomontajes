@@ -6,6 +6,7 @@
 package vistas.perforacion;
 
 import java.util.prefs.Preferences;
+import javax.swing.JOptionPane;
 import reportes.leePlantilla;
 
 /**
@@ -91,7 +92,6 @@ public class infoPerforacion extends javax.swing.JFrame {
         nombreAsistxt = new javax.swing.JTextField();
         celAsistxt = new javax.swing.JTextField();
         next = new javax.swing.JButton();
-        returnbtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,17 +214,10 @@ public class infoPerforacion extends javax.swing.JFrame {
             }
         });
 
-        next.setText("siguiente");
+        next.setText("guardar");
         next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextActionPerformed(evt);
-            }
-        });
-
-        returnbtn.setText("volver");
-        returnbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnbtnActionPerformed(evt);
             }
         });
 
@@ -264,9 +257,7 @@ public class infoPerforacion extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(returnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
+                        .addGap(273, 273, 273)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,9 +373,7 @@ public class infoPerforacion extends javax.swing.JFrame {
                             .addComponent(nameInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(compniaIspectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(returnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -491,19 +480,12 @@ public class infoPerforacion extends javax.swing.JFrame {
         prefs.put("celAsis", celAsistxt.getText());
         prefs.put("nameInspect", nameInspecttxt.getText());
         prefs.put("celInspect", celInspecttxt.getText());
+        JOptionPane.showMessageDialog(null, "Datos Guardados");
 
         this.setVisible(false);
-        tipoInspeccion i = new tipoInspeccion();
-        i.setVisible(true);
 
 
     }//GEN-LAST:event_nextActionPerformed
-
-    private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbtnActionPerformed
-        this.setVisible(false);
-        formularioPerforacion f = new formularioPerforacion();
-        f.setVisible(true);
-    }//GEN-LAST:event_returnbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -571,7 +553,6 @@ public class infoPerforacion extends javax.swing.JFrame {
     private javax.swing.JButton next;
     private javax.swing.JTextField nombreAsistxt;
     private javax.swing.JTextField nombreSupertxt;
-    private javax.swing.JButton returnbtn;
     private javax.swing.JTextField ubicacionPozotxt;
     // End of variables declaration//GEN-END:variables
 }

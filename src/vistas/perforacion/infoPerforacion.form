@@ -104,9 +104,7 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="returnbtn" min="-2" pref="87" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -264,10 +262,7 @@
                               <Component id="compniaIspectxt" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="next" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="returnbtn" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="next" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -458,18 +453,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="next">
           <Properties>
-            <Property name="text" type="java.lang.String" value="siguiente"/>
+            <Property name="text" type="java.lang.String" value="guardar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="returnbtn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="volver"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnbtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
