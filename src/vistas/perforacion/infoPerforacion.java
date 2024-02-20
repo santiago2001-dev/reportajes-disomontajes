@@ -5,6 +5,7 @@
  */
 package vistas.perforacion;
 
+import java.util.prefs.Preferences;
 import reportes.leePlantilla;
 
 /**
@@ -19,6 +20,35 @@ public class infoPerforacion extends javax.swing.JFrame {
     public infoPerforacion() {
         initComponents();
         this.setLocationRelativeTo(null);
+        getDatos();
+
+    }
+
+    public void getDatos() {
+        Preferences prefs = Preferences.userNodeForPackage(infoPerforacion.class);
+
+        String ubiPozo = prefs.get("ubiPozo", " ");
+        String activdadEqui = prefs.get("activdadEqui", " ");
+        String fechaIni = prefs.get("fechaIni", " ");
+        String fehaFin = prefs.get("fehaFin", " ");
+        String compaIns = prefs.get("compaIns", " ");
+        String nameSuper = prefs.get("nameSuper", " ");
+        String celSuper = prefs.get("celSuper", " ");
+        String nameAsis = prefs.get("nameAsis", " ");
+        String celAsis = prefs.get("celAsis", " ");
+        String nameInspect = prefs.get("nameInspect", " ");
+        String celInspect = prefs.get("celInspect", " ");
+        ubicacionPozotxt.setText(ubiPozo);
+        actividadtxt.setText(activdadEqui);
+        fechaInitxt.setText(fechaIni);
+        fechafinTxt.setText(fehaFin);
+        compniaIspectxt.setText(compaIns);
+        nombreSupertxt.setText(nameSuper);
+        celSuperTxt.setText(celSuper);
+        nombreAsistxt.setText(nameAsis);
+        celAsistxt.setText(celAsis);
+        nameInspecttxt.setText(nameInspect);
+        celInspecttxt.setText(celInspect);
 
     }
 
@@ -61,6 +91,7 @@ public class infoPerforacion extends javax.swing.JFrame {
         nombreAsistxt = new javax.swing.JTextField();
         celAsistxt = new javax.swing.JTextField();
         next = new javax.swing.JButton();
+        returnbtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,6 +221,13 @@ public class infoPerforacion extends javax.swing.JFrame {
             }
         });
 
+        returnbtn.setText("volver");
+        returnbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -222,46 +260,46 @@ public class infoPerforacion extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel24)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(returnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nombreSupertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(nombreSupertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addGap(28, 28, 28)
-                                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(celSuperTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(28, 28, 28)
+                                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(celSuperTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nameInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(9, 9, 9)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(nameInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(35, 35, 35)
-                                                        .addComponent(jLabel26)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                        .addGap(193, 193, 193))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(9, 9, 9))
-                                            .addComponent(celInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(178, 178, 178))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jLabel24)
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(35, 35, 35)
+                                                .addComponent(jLabel26)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 4, Short.MAX_VALUE)))
+                                .addGap(193, 193, 193))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(9, 9, 9))
+                                    .addComponent(celInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(178, 178, 178))))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(307, 307, 307)
@@ -344,7 +382,9 @@ public class infoPerforacion extends javax.swing.JFrame {
                             .addComponent(nameInspecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(compniaIspectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(returnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -438,30 +478,32 @@ public class infoPerforacion extends javax.swing.JFrame {
     }//GEN-LAST:event_celAsistxtActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        String ubiPozo = ubicacionPozotxt.getText(),
-                activdadEqui = actividadtxt.getText(),
-                fechaIni = fechaInitxt.getText(),
-                fehaFin = fechafinTxt.getText(),
-                compaIns = compniaIspectxt.getText(),
-                nameSuper = nombreSupertxt.getText(),
-                celSuper = celSuperTxt.getText(),
-                nameAsis = nombreAsistxt.getText(),
-                celAsis = celAsistxt.getText(),
-                nameInspect = nameInspecttxt.getText(),
-                celInspect = celInspecttxt.getText();
+        Preferences prefs = Preferences.userNodeForPackage(infoPerforacion.class);
 
-        String datos[] = {ubiPozo, activdadEqui, fechaIni, fehaFin, compaIns, nameSuper, celSuper, nameAsis, celAsis, nameInspect, celInspect};
-        leePlantilla l = leePlantilla.obtenerInstancia();
+        prefs.put("ubiPozo", ubicacionPozotxt.getText());
+        prefs.put("activdadEqui", actividadtxt.getText());
+        prefs.put("fechaIni", fechaInitxt.getText());
+        prefs.put("fehaFin", fechafinTxt.getText());
+        prefs.put("compaIns", compniaIspectxt.getText());
+        prefs.put("nameSuper", nombreSupertxt.getText());
+        prefs.put("celSuper", celSuperTxt.getText());
+        prefs.put("nameAsis", nombreAsistxt.getText());
+        prefs.put("celAsis", celAsistxt.getText());
+        prefs.put("nameInspect", nameInspecttxt.getText());
+        prefs.put("celInspect", celInspecttxt.getText());
 
-        l.capturarDatosPerforacion(datos);
-              this.setVisible(false);
-        tipoInspeccion i  = new tipoInspeccion();
+        this.setVisible(false);
+        tipoInspeccion i = new tipoInspeccion();
         i.setVisible(true);
-
-      
 
 
     }//GEN-LAST:event_nextActionPerformed
+
+    private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbtnActionPerformed
+        this.setVisible(false);
+        formularioPerforacion f = new formularioPerforacion();
+        f.setVisible(true);
+    }//GEN-LAST:event_returnbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -498,7 +540,6 @@ public class infoPerforacion extends javax.swing.JFrame {
         });
     }
 
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField actividadtxt;
@@ -530,6 +571,7 @@ public class infoPerforacion extends javax.swing.JFrame {
     private javax.swing.JButton next;
     private javax.swing.JTextField nombreAsistxt;
     private javax.swing.JTextField nombreSupertxt;
+    private javax.swing.JButton returnbtn;
     private javax.swing.JTextField ubicacionPozotxt;
     // End of variables declaration//GEN-END:variables
 }

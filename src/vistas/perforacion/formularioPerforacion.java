@@ -5,7 +5,9 @@
  */
 package vistas.perforacion;
 
+import java.util.prefs.Preferences;
 import reportes.leePlantilla;
+import vistas.login;
 
 /**
  *
@@ -19,6 +21,7 @@ public class formularioPerforacion extends javax.swing.JFrame {
     public formularioPerforacion() {
         initComponents();
         this.setLocationRelativeTo(null);
+        getDatos();
 
     }
 
@@ -518,30 +521,74 @@ public class formularioPerforacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombretxt3ActionPerformed
 
+    private void getDatos() {
+        Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
+
+        String titulo = prefs.get("titulo", " ");
+        String equipoRieg = prefs.get("equipoRieg", " ");
+        String CompaniaServ = prefs.get("CompaniaServ", " ");
+        String compniaCont = prefs.get("compniaCont", " ");
+
+        String nombre1 = prefs.get("nombre1", " ");
+        String celular1 = prefs.get("celular1", " ");
+        String correo1 = prefs.get("correo1", " ");
+
+        String nombre2 = prefs.get("nombre2", " ");
+        String celular2 = prefs.get("celular2", " ");
+        String correo2 = prefs.get("correo2", " ");
+
+        String nombre3 = prefs.get("nombre3", " ");
+        String celular3 = prefs.get("celular3", " ");
+        String correo3 = prefs.get("correo3", " ");
+        String municipio = prefs.get("municipio", " ");
+        String pozo = prefs.get("pozo", " ");
+        String depa = prefs.get("depa", " ");
+
+        titulotxt.setText(titulo);
+        pozotxt.setText(equipoRieg);
+        companiaServitxt.setText(CompaniaServ);
+        compianiaContratxt.setText(compniaCont);
+
+        nombre1txt.setText(nombre1);
+        celulart1txt.setText(celular1);
+        correotxt.setText(correo1);
+
+        nombretxt2.setText(nombre2);
+        celulartxt2.setText(celular2);
+        correotxt2.setText(correo2);
+
+        nombretxt3.setText(nombre3);
+        celulartxt3.setText(celular3);
+        correotxt3.setText(correo3);
+        municipiotxt.setText(municipio);
+        pozotxt.setText(pozo);
+        depatxt.setText(depa);
+
+    }
     private void siguienteUnoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteUnoBtnActionPerformed
-        String titulo = titulotxt.getText();
-        String equipoRieg = pozotxt.getText();
-        String CompaniaServ = companiaServitxt.getText();
-        String compniaCont = compianiaContratxt.getText();
 
-        String nombre1 = nombre1txt.getText();
-        String celular1 = celulart1txt.getText();
-        String correo1 = correotxt.getText();
+        Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
 
-        String nombre2 = nombretxt2.getText();
-        String celular2 = celulartxt2.getText();
-        String correo2 = correotxt2.getText();
+        prefs.put("titulo", titulotxt.getText());
+        prefs.put("equipoRieg", pozotxt.getText());
+        prefs.put("CompaniaServ", companiaServitxt.getText());
+        prefs.put("compniaCont", compianiaContratxt.getText());
 
-        String nombre3 = nombretxt3.getText();
-        String celular3 = celulartxt3.getText();
-        String correo3 = correotxt3.getText();
-        String municipio = municipiotxt.getText();
-        String pozo = pozotxt.getText();
-        String depa = depatxt.getText();
-        leePlantilla l = leePlantilla.obtenerInstancia();
+        prefs.put("nombre1", nombre1txt.getText());
+        prefs.put("celular1", celulart1txt.getText());
+        prefs.put("correo1", correotxt.getText());
 
-        String[] infoDoc = {"perforacion", titulo, compniaCont, CompaniaServ, equipoRieg, nombre1, celular1, correo1, nombre2, celular2, correo2, nombre3, celular3, correo3, pozo, municipio, depa};
-        l.capturarDatosPerforacion(infoDoc);
+        prefs.put("nombre2", nombretxt2.getText());
+        prefs.put("celular2", celulartxt2.getText());
+        prefs.put("correo2", correotxt2.getText());
+
+        prefs.put("nombre3", nombretxt3.getText());
+        prefs.put("celular3", celulartxt3.getText());
+        prefs.put("correo3", correotxt3.getText());
+        prefs.put("municipio", municipiotxt.getText());
+        prefs.put("pozo", pozotxt.getText());
+        prefs.put("depa", depatxt.getText());
+
         this.setVisible(false);
         infoPerforacion i = new infoPerforacion();
         i.setVisible(true);
@@ -594,6 +641,7 @@ public class formularioPerforacion extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField celulart1txt;

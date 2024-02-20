@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.util.prefs.Preferences;
 
 /**
  *
@@ -110,14 +111,22 @@ public class login extends javax.swing.JFrame {
         String pass = String.valueOf(txtPassword.getPassword());
         String sql = "SELECT * FROM users WHERE password = '" + pass + "' and userName = '" + user + "' ";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(sql)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(sql)) {
             // Establecer parámetros de la consulta
 
             // Ejecutar la consulta y obtener el resultado
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 // Procesar el resultado
                 if (resultSet.next()) {
+
                     JOptionPane.showMessageDialog(null, "Bienvenido " + user.toLowerCase());
+                    Preferences prefs = Preferences.userNodeForPackage(login.class);
+
+                    // Almacena una preferencia temporal
+                    prefs.put("idUser", String.valueOf(resultSet.getInt("id")));
+
+                   
+
                     progreso p = new progreso();
                     p.setVisible(true);
                     this.setVisible(false);

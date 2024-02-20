@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import reportes.leePlantilla;
+import java.util.prefs.Preferences;
 
 /**
  *
@@ -24,6 +25,12 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
          this.setLocationRelativeTo(null);
+                Preferences prefs = Preferences.userNodeForPackage(login.class);
+
+        // Obtiene y muestra la preferencia
+        String valor = prefs.get("idUser", "no esta");
+        System.out.println("Valor recuperado desde otra clase: " + valor);
+
      
      }
 
