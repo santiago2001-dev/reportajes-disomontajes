@@ -5,6 +5,8 @@
  */
 package vistas.perforacion;
 
+import java.util.prefs.Preferences;
+import javax.swing.JOptionPane;
 import reportes.leePlantilla;
 
 /**
@@ -19,7 +21,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
     public tipoInspeccion() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        getDatos();
     }
 
     /**
@@ -379,8 +381,40 @@ public class tipoInspeccion extends javax.swing.JFrame {
     private void perfInter2txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfInter2txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_perfInter2txtActionPerformed
+private void getDatos(){
+        Preferences prefs = Preferences.userNodeForPackage(tipoInspeccion.class);
+        String perfinternacional = prefs.get("perfinternacional", " ");
+        String perfnacional2 = prefs.get("perfnacional2", " ");
+        String perfnacional = prefs.get("perfinternacional", " ");
+        String perfinternacional2 = prefs.get("perfinternacional2", " ");
+        String wkinternacional1 = prefs.get("wkinternacional1", " ");
+        String wknacional2 = prefs.get("wknacional2", " ");
+        String wknacional1 = prefs.get("wknacional1", " ");
+        String wkinternacional2 = prefs.get("wkfnacional", " ");
 
+        perInter1Txt.setText(perfinternacional);
+        perNAci2Txt.setText(perfnacional2);
+        perNac1txt.setText(perfnacional);
+        perfInter2txt.setText(perfinternacional2);
+        wkInter1Txt.setText(wkinternacional1);
+        wkNAci2Txt.setText(wknacional2);
+        wkNacio1Txt.setText(wknacional1);
+        wkInter2txt.setText(wkinternacional2);
+
+}
     private void nextbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextbtnActionPerformed
+        Preferences prefs = Preferences.userNodeForPackage(tipoInspeccion.class);
+        
+        
+         prefs.put("perfinternacional",perInter1Txt.getText());
+        prefs.put("perfnacional2",perNAci2Txt.getText());
+        prefs.put("perfnacional",perNac1txt.getText());
+        prefs.put("perfinternacional2",perfInter2txt.getText());
+         prefs.put("wkinternacional1",wkInter1Txt.getText());
+        prefs.put("wknacional2",wkNAci2Txt.getText());
+        prefs.put("wknacional1",wkNacio1Txt.getText());
+        prefs.put("wkinternacional2",wkInter2txt.getText());
+        
         String perInter1 = perInter1Txt.getText(),
                 perNAci2 = perNAci2Txt.getText(),
                 perNac1 = perNac1txt.getText(),
@@ -397,7 +431,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
          this.setVisible(false);
         tipoInsepeccionTwo i  = new tipoInsepeccionTwo();
         i.setVisible(true);
-
+         JOptionPane.showMessageDialog(null, "Datos Guardados");
 
     }//GEN-LAST:event_nextbtnActionPerformed
 

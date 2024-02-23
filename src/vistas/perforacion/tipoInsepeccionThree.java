@@ -5,6 +5,8 @@
  */
 package vistas.perforacion;
 
+import java.util.prefs.Preferences;
+import javax.swing.JOptionPane;
 import reportes.leePlantilla;
 
 /**
@@ -19,7 +21,7 @@ public class tipoInsepeccionThree extends javax.swing.JFrame {
     public tipoInsepeccionThree() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        getDatos();
     }
 
     /**
@@ -232,23 +234,30 @@ public class tipoInsepeccionThree extends javax.swing.JFrame {
     private void wkNacio1TxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wkNacio1TxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_wkNacio1TxtActionPerformed
+private void getDatos (){
+Preferences prefs = Preferences.userNodeForPackage(tipoInsepeccionThree.class);
+        String perfinternacional = prefs.get("perfinternacional", " ");
+        String wkinternacional = prefs.get("wkinternacional", " ");
+        String perfnacional2 = prefs.get("perfnacional2", " ");
+        String wkfnacional = prefs.get("wkfnacional", " ");
 
+        perInter1Txt.setText(perfinternacional);
+        wkInter1Txt.setText(wkinternacional);
+        perNac1txt.setText(perfnacional2);
+        wkNacio1Txt.setText(wkfnacional);
+}
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String perInter1 = perInter1Txt.getText(),
-                perNac1 = perNac1txt.getText(),
-                wkInter1 = wkInter1Txt.getText(),
-                wkNacio1 = wkNacio1Txt.getText();
-
-        String datos[] = {perNac1, wkNacio1, perInter1, wkInter1};
-
-        leePlantilla l = leePlantilla.obtenerInstancia();
-
-        l.capturarDatosPerforacion(datos);
-
+        
+        Preferences prefs = Preferences.userNodeForPackage(tipoInsepeccionThree.class);
+        prefs.put("perfinternacional",perInter1Txt.getText());
+        prefs.put("wkinternacional",wkInter1Txt.getText());
+        prefs.put("perfnacional2",perNac1txt.getText());
+        prefs.put("wkfnacional",wkNacio1Txt.getText());
+        
+               
           this.setVisible(false);
-        cargarEvidencias i  = new cargarEvidencias();
-        i.setVisible(true);
-
+        
+         JOptionPane.showMessageDialog(null, "Datos Guardados");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
