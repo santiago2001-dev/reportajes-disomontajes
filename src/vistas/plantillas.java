@@ -9,12 +9,14 @@ import vistas.perforacion.formularioPerforacion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.prefs.Preferences;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import models.listTypeUsers;
 import models.typeUsers;
 import reportes.conexion;
 import reportes.leePlantilla;
+import vistas.perforacion.Menu;
 
 /**
  *
@@ -42,9 +44,9 @@ public class plantillas extends javax.swing.JFrame {
 
         String query = "SELECT * FROM plantillas";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     typeUsers ut = new typeUsers();
                     ut.setId(resultSet.getInt("id"));
@@ -138,7 +140,11 @@ public class plantillas extends javax.swing.JFrame {
 
         switch (plantilla) {
             case "perforacion":
-                formularioPerforacion a = new formularioPerforacion();
+
+                Preferences prefs = Preferences.userNodeForPackage(plantillas.class);
+
+                prefs.put("plantilla", "perforacion");
+                Menu a = new Menu();
                 a.setVisible(true);
                 this.setVisible(false);
                 break;

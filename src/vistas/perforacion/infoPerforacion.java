@@ -8,6 +8,7 @@ package vistas.perforacion;
 import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import reportes.leePlantilla;
+import vistas.home;
 
 /**
  *
@@ -480,9 +481,13 @@ public class infoPerforacion extends javax.swing.JFrame {
         prefs.put("celAsis", celAsistxt.getText());
         prefs.put("nameInspect", nameInspecttxt.getText());
         prefs.put("celInspect", celInspecttxt.getText());
+        
         JOptionPane.showMessageDialog(null, "Datos Guardados");
-
+        //provicional
+         leePlantilla l = leePlantilla.obtenerInstancia();
+        l.leeDoc();
         this.setVisible(false);
+     
 
 
     }//GEN-LAST:event_nextActionPerformed

@@ -32,6 +32,11 @@ import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import vistas.home;
+import java.util.prefs.Preferences;
+
+import vistas.perforacion.formularioPerforacion;
+import vistas.perforacion.infoPerforacion;
+import vistas.plantillas;
 
 public class leePlantilla {
 
@@ -42,7 +47,7 @@ public class leePlantilla {
     String cadenaAleatoria = generarCadenaAleatoria(4);
     String path = "documentos-generados/perforacion/";
     private static leePlantilla instancia = new leePlantilla();
-    private ArrayList<String> infoPerforacion = new ArrayList<>();
+    //private ArrayList<String> infoPerforacion = new ArrayList<>();
     ArrayList<String> dataTable = new ArrayList<>();
     ArrayList<String> imagePaths = new ArrayList<>();
     ArrayList<String> descs = new ArrayList<>();
@@ -55,7 +60,7 @@ public class leePlantilla {
     }
 
     public void capturarDatosPerforacion(String datos[]) {
-        Collections.addAll(infoPerforacion, datos);
+        // Collections.addAll(infoPerforacion, datos);
     }
 
     public void llenadoTabla(ArrayList<String> data, ArrayList<String> images, ArrayList<String> desc) {
@@ -64,80 +69,84 @@ public class leePlantilla {
             imagePaths.addAll(images);
             descs.addAll(desc);
 
-            leeDoc(infoPerforacion);
+            leeDoc();
         } else {
             System.out.println("Alguno de los parámetros es null");
         }
 
     }
 
-    public void leeDoc(ArrayList<String> infoDoc) {
+    public void leeDoc() {
+        Preferences plantillas = Preferences.userNodeForPackage(plantillas.class);
 
-        switch (infoDoc.get(0)) {
+        String Plantilla = plantillas.get("plantilla", " ");
+        
+        switch (Plantilla) {
             case "perforacion":
                 try {
                     FileInputStream fis = new FileInputStream("src/plantillas/perforacion.docx");
                     XWPFDocument document = new XWPFDocument(fis);
+                    //instanciar todas las clases
+                    Preferences vistaUno = Preferences.userNodeForPackage(formularioPerforacion.class);
+                    Preferences vistaDos = Preferences.userNodeForPackage(infoPerforacion.class);
 
-                    replaceText(document, "titulo", infoDoc.get(1));
-                    replaceText(document, "companiaContra", infoDoc.get(2));
-                    replaceText(document, "companiaSeriv", infoDoc.get(3));
-                    replaceText(document, "Equiporieg", infoDoc.get(4));
-                    replaceText(document, "nombreUno", infoDoc.get(5));
-                    replaceText(document, "celularUno", infoDoc.get(6));
-                    replaceText(document, "correoUno", infoDoc.get(7));
-                    replaceText(document, "nombreDos", infoDoc.get(8));
-                    replaceText(document, "celularDos", infoDoc.get(9));
-                    replaceText(document, "correoDos", infoDoc.get(10));
-                    replaceText(document, "nombreTres", infoDoc.get(11));
-                    replaceText(document, "celularTres", infoDoc.get(12));
-                    replaceText(document, "correoTres", infoDoc.get(13));
-                    replaceText(document, "idpozo", infoDoc.get(14));
-                    replaceText(document, "idmuni", infoDoc.get(15));
-                    replaceText(document, "iddepa", infoDoc.get(16));
-                    replaceText(document, "ubiPozo", infoDoc.get(17));
-                    replaceText(document, "activdadEqui", infoDoc.get(18));
-                    replaceText(document, "fechaIni", infoDoc.get(19));
-                    replaceText(document, "fehaFin", infoDoc.get(20));
-                    replaceText(document, "compaIns", infoDoc.get(21));
-                    replaceText(document, "nameSuper", infoDoc.get(22));
-                    replaceText(document, "celSuper", infoDoc.get(23));
-                    replaceText(document, "nameAsis", infoDoc.get(24));
-                    replaceText(document, "celAsis", infoDoc.get(25));
-                    replaceText(document, "nameInspect", infoDoc.get(26));
-                    replaceText(document, "celInspect", infoDoc.get(27));
-                    replaceText(document, "Perf1", infoDoc.get(28));
-                    replaceText(document, "Wk1", infoDoc.get(29));
-                    replaceText(document, "Perf2", infoDoc.get(30));
-                    replaceText(document, "Wk2", infoDoc.get(31));
-                    replaceText(document, "Perf3", infoDoc.get(32));
-                    replaceText(document, "Wk3", infoDoc.get(33));
-                    replaceText(document, "Perf4", infoDoc.get(34));
-                    replaceText(document, "Wk4", infoDoc.get(35));
+                    replaceText(document, "titulo", vistaUno.get("titulo", " "));
+                    replaceText(document, "companiaContra", vistaUno.get("compniaCont", " "));
+                    replaceText(document, "companiaSeriv", vistaUno.get("CompaniaServ", " "));
+                    replaceText(document, "Equiporieg", vistaUno.get("equipoRieg", " "));
+                    replaceText(document, "nombreUno", vistaUno.get("nombre1", " "));
+                    replaceText(document, "celularUno", vistaUno.get("celular1", " "));
+                    replaceText(document, "correoUno", vistaUno.get("correo1", " "));
+                    replaceText(document, "nombreDos", vistaUno.get("nombre2", " "));
+                    replaceText(document, "celularDos", vistaUno.get("celular2", " "));
+                    replaceText(document, "correoDos", vistaUno.get("correo2", " "));
+                    replaceText(document, "nombreTres", vistaUno.get("nombre3", " "));
+                    replaceText(document, "celularTres", vistaUno.get("celular3", " "));
+                    replaceText(document, "correoTres", vistaUno.get("correo3", " "));
+                    replaceText(document, "idpozo", vistaUno.get("pozo", " "));
+                    replaceText(document, "idmuni", vistaUno.get("municipio", " "));
+                    replaceText(document, "iddepa", vistaUno.get("depa", " "));
+                    replaceText(document, "ubiPozo", vistaDos.get("ubiPozo", " "));
+                    replaceText(document, "activdadEqui", vistaDos.get("activdadEqui", " "));
+                    replaceText(document, "fechaIni", vistaDos.get("fechaIni", " "));
+                    replaceText(document, "fehaFin", vistaDos.get("fehaFin", " "));
+                    replaceText(document, "compaIns", vistaDos.get("compaIns", " "));
+                    replaceText(document, "nameSuper", vistaDos.get("nameSuper", " "));
+                    replaceText(document, "celSuper", vistaDos.get("celSuper", " "));
+                    replaceText(document, "nameAsis", vistaDos.get("nameAsis", " "));
+                    replaceText(document, "celAsis", vistaDos.get("celAsis", " "));
+                    replaceText(document, "nameInspect", vistaDos.get("nameInspect", " "));
+                    replaceText(document, "celInspect", vistaDos.get("celInspect", " "));
 
-                    replaceText(document, "VSEH1", infoDoc.get(36));
-                    replaceText(document, "IVSEH2", infoDoc.get(37));
-                    replaceText(document, "IVSEH3", infoDoc.get(38));
-                    replaceText(document, "IVSEH4", infoDoc.get(39));
-
-                    replaceText(document, "ICFR1", infoDoc.get(40));
-                    replaceText(document, "ICFR2", infoDoc.get(41));
-                    replaceText(document, "ICFR3", infoDoc.get(42));
-                    replaceText(document, "ICFR4", infoDoc.get(43));
-
-                    replaceText(document, "ERIAI1", infoDoc.get(44));
-                    replaceText(document, "ERIAI2", infoDoc.get(45));
-                    replaceText(document, "ERIAI3", infoDoc.get(46));
-                    replaceText(document, "ERIAI4", infoDoc.get(47));
-
-                    replaceText(document, "descImgUno", infoDoc.get(52));
-                    replaceText(document, "descImgDos", infoDoc.get(53));
-                    replaceText(document, "descImgTres", infoDoc.get(54));
-                    replaceText(document, "descImgCuatro", infoDoc.get(55));
-                   // replaceText(document, "IdProposito", infoDoc.get(56));
-
-                    addTable(document, dataTable, imagePaths, descs);
-
+                    
+      
+                    //reemplazar ´por variables
+                    //replaceText(document, "Perf1", infoDoc.get(28));
+                    //replaceText(document, "Wk1", infoDoc.get(29));
+                    //replaceText(document, "Perf2", infoDoc.get(30));
+                    // replaceText(document, "Wk2", infoDoc.get(31));
+                    // replaceText(document, "Perf3", infoDoc.get(32));
+                    // replaceText(document, "Wk3", infoDoc.get(33));
+                    //replaceText(document, "Perf4", infoDoc.get(34));
+                    //replaceText(document, "Wk4", infoDoc.get(35));
+                    //replaceText(document, "VSEH1", infoDoc.get(36));
+                    //replaceText(document, "IVSEH2", infoDoc.get(37));
+                    //replaceText(document, "IVSEH3", infoDoc.get(38));
+                    //replaceText(document, "IVSEH4", infoDoc.get(39));
+                    // replaceText(document, "ICFR1", infoDoc.get(40));
+                    //replaceText(document, "ICFR2", infoDoc.get(41));
+                    //replaceText(document, "ICFR3", infoDoc.get(42));
+                    //replaceText(document, "ICFR4", infoDoc.get(43));
+                    // replaceText(document, "ERIAI1", infoDoc.get(44));
+                    //replaceText(document, "ERIAI2", infoDoc.get(45));
+                    //replaceText(document, "ERIAI3", infoDoc.get(46));
+                    //replaceText(document, "ERIAI4", infoDoc.get(47));
+                    // replaceText(document, "descImgUno", infoDoc.get(52));
+                    //replaceText(document, "descImgDos", infoDoc.get(53));
+                    //replaceText(document, "descImgTres", infoDoc.get(54));
+                    //replaceText(document, "descImgCuatro", infoDoc.get(55));
+                    // replaceText(document, "IdProposito", infoDoc.get(56));
+                    //addTable(document, dataTable, imagePaths, descs);
                     String nameFile = path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx";
                     FileOutputStream fos = new FileOutputStream(nameFile);
                     document.write(fos);
@@ -145,12 +154,20 @@ public class leePlantilla {
                     fis.close();
                     fos.close();
 
-                    insertImageWithApachePOI(nameFile, infoDoc.get(48), "idImgUno");
-                    insertImageWithApachePOI(nameFile, infoDoc.get(49), "imgDos");
-                    insertImageWithApachePOI(nameFile, infoDoc.get(50), "imgTres");
-                    insertImageWithApachePOI(nameFile, infoDoc.get(51), "imgCuatro");
+                    // insertImageWithApachePOI(nameFile, infoDoc.get(48), "idImgUno");
+                    //insertImageWithApachePOI(nameFile, infoDoc.get(49), "imgDos");
+                    //insertImageWithApachePOI(nameFile, infoDoc.get(50), "imgTres");
+                    //insertImageWithApachePOI(nameFile, infoDoc.get(51), "imgCuatro");
+                    try {
+                        vistaUno.clear();
+                        vistaDos.clear();
 
-                    JOptionPane.showMessageDialog(null, "reporte crrado de forma correcta"+nameFile);
+                        System.out.println("Todas las preferencias han sido eliminadas.");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    JOptionPane.showMessageDialog(null, "reporte creado de forma correcta" + " " + nameFile);
                     home h = new home();
                     h.setVisible(true);
 
@@ -196,7 +213,7 @@ public class leePlantilla {
                 break;
 
             default:
-                System.out.println("Invalid day");
+                    JOptionPane.showMessageDialog(null, "no se encontro plantilla" );
         }
 
     }

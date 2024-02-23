@@ -524,6 +524,8 @@ public class formularioPerforacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombretxt3ActionPerformed
 
+    
+    //funcion para poner datos en los labels 
     private void getDatos() {
         Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
 
@@ -570,10 +572,11 @@ public class formularioPerforacion extends javax.swing.JFrame {
     }
     private void siguienteUnoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteUnoBtnActionPerformed
 
+       
         Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
 
         prefs.put("titulo", titulotxt.getText());
-        prefs.put("equipoRieg", pozotxt.getText());
+        prefs.put("equipoRieg", equipoRiegtxt1.getText());
         prefs.put("CompaniaServ", companiaServitxt.getText());
         prefs.put("compniaCont", compianiaContratxt.getText());
 
