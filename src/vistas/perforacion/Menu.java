@@ -15,10 +15,13 @@ public class Menu extends javax.swing.JFrame {
     tipoInspeccion tipoinspeccion = new tipoInspeccion();
     tipoInsepeccionThree tipoinspeccionthree = new tipoInsepeccionThree();
     cargarEvidencias cargarevidencias = new cargarEvidencias();
-     formularioPerforacion formularioperforacion = new formularioPerforacion();
-      infoPerforacion infoperforacion = new infoPerforacion ();
-      configuracionSistemas configuracionsistema  = new configuracionSistemas();
-      
+    formularioPerforacion formularioperforacion = new formularioPerforacion();
+    infoPerforacion infoperforacion = new infoPerforacion();
+    configuracionSistemas configuracionsistema = new configuracionSistemas();
+    Portada portada = new Portada();
+    presenteadoA presentado = new presenteadoA();
+    proposito proposito = new proposito();
+
     public Menu() {
         initComponents();
         setTitle("Menu");
@@ -37,8 +40,12 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -49,6 +56,8 @@ public class Menu extends javax.swing.JFrame {
         Subir = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
 
@@ -62,12 +71,24 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 927, Short.MAX_VALUE)
+            .addGap(0, 1009, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 496, Short.MAX_VALUE)
         );
+
+        jMenu8.setText("Portada");
+
+        jMenuItem8.setText("Datos Portada");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu8);
 
         jMenu1.setText("datos de compañia");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +106,18 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
+
+        jMenu9.setText("presentado a");
+
+        jMenuItem9.setText("info personas");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem9);
+
+        jMenuBar1.add(jMenu9);
 
         jMenu2.setText("info inspeccion");
 
@@ -150,6 +183,18 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu10.setText("proposito");
+
+        jMenuItem10.setText("proposito inspeccion");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem10);
+
+        jMenuBar1.add(jMenu10);
+
         jMenu6.setText("detalles relevantes");
         jMenuBar1.add(jMenu6);
 
@@ -162,7 +207,9 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,93 +220,160 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       
+
         tipoinspeccion.setVisible(true);
-         tipoinspecciontwo.setVisible(false);
-          tipoinspeccionthree.setVisible(false);
-          cargarevidencias.setVisible(false);
-          formularioperforacion.setVisible(false);
-          infoperforacion.setVisible(false);
-           configuracionsistema.setVisible(false);
+        tipoinspecciontwo.setVisible(false);
+        tipoinspeccionthree.setVisible(false);
+        cargarevidencias.setVisible(false);
+        formularioperforacion.setVisible(false);
+        infoperforacion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-    
-    
-         tipoinspecciontwo.setVisible(true);
-         tipoinspeccion.setVisible(false);
-          tipoinspeccionthree.setVisible(false);
-          cargarevidencias.setVisible(false);
-          formularioperforacion.setVisible(false);
-          infoperforacion.setVisible(false);
-           configuracionsistema.setVisible(false);
-     
+
+        tipoinspecciontwo.setVisible(true);
+        tipoinspeccion.setVisible(false);
+        tipoinspeccionthree.setVisible(false);
+        cargarevidencias.setVisible(false);
+        formularioperforacion.setVisible(false);
+        infoperforacion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        
+
         tipoinspeccionthree.setVisible(true);
         tipoinspecciontwo.setVisible(false);
-         tipoinspeccion.setVisible(false);
-          cargarevidencias.setVisible(false);
-          formularioperforacion.setVisible(false);
-          infoperforacion.setVisible(false);
-           configuracionsistema.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        formularioperforacion.setVisible(false);
+        infoperforacion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-      
+
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void SubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirActionPerformed
         // TODO add your handling code here:
-       
+
         cargarevidencias.setVisible(true);
         tipoinspeccionthree.setVisible(false);
         tipoinspecciontwo.setVisible(false);
-         tipoinspeccion.setVisible(false);
-          formularioperforacion.setVisible(false);
-          infoperforacion.setVisible(false);
-           configuracionsistema.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        infoperforacion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_SubirActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-     
+
         formularioperforacion.setVisible(true);
         cargarevidencias.setVisible(false);
         tipoinspeccionthree.setVisible(false);
         tipoinspecciontwo.setVisible(false);
-         tipoinspeccion.setVisible(false);
-          infoperforacion.setVisible(false);
-           configuracionsistema.setVisible(false);
-       
+        tipoinspeccion.setVisible(false);
+        infoperforacion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-      
+
         infoperforacion.setVisible(true);
         formularioperforacion.setVisible(false);
         cargarevidencias.setVisible(false);
         tipoinspeccionthree.setVisible(false);
         tipoinspecciontwo.setVisible(false);
-         tipoinspeccion.setVisible(false);
-           configuracionsistema.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        configuracionsistema.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        
+
         configuracionsistema.setVisible(true);
         infoperforacion.setVisible(false);
         formularioperforacion.setVisible(false);
         cargarevidencias.setVisible(false);
         tipoinspeccionthree.setVisible(false);
         tipoinspecciontwo.setVisible(false);
-         tipoinspeccion.setVisible(false);
-           
+        tipoinspeccion.setVisible(false);
+        portada.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        presentado.setVisible(false);
+        proposito.setVisible(false);
+
+        configuracionsistema.setVisible(false);
+        infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        tipoinspeccionthree.setVisible(false);
+        tipoinspecciontwo.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        portada.setVisible(true);    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        configuracionsistema.setVisible(false);
+        presentado.setVisible(true);
+        proposito.setVisible(false);
+
+        infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        tipoinspeccionthree.setVisible(false);
+        tipoinspecciontwo.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        portada.setVisible(false);    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        configuracionsistema.setVisible(false);
+        presentado.setVisible(false);
+        proposito.setVisible(true);
+        infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        tipoinspeccionthree.setVisible(false);
+        tipoinspecciontwo.setVisible(false);
+        tipoinspeccion.setVisible(false);
+        portada.setVisible(false);    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,20 +413,26 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Subir;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

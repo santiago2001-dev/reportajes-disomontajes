@@ -22,6 +22,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
      */
     public cargarEvidencias() {
         initComponents();
+        this.setLocationRelativeTo(null);
         getDatos();
     }
 
@@ -255,46 +256,38 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private void btnImg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImg4ActionPerformed
         imgCuatro = getPathFile();
     }//GEN-LAST:event_btnImg4ActionPerformed
-    private void getDatos (){
-    Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
-    
+    private void getDatos() {
+        Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
+
         String descripcionimagenuno = prefs.get("descripcionimagenuno", " ");
         String descripcionimagedos = prefs.get("descripcionimagedos", " ");
         String descripcionimagentres = prefs.get("descripcionimagentres", " ");
         String descripcionimagencuatro = prefs.get("descripcionimagencuatro", " ");
-    
-    
+        imgUno = prefs.get("imgUno", " ");
+        imgDos = prefs.get("imgdos", " ");
+        imgTres = prefs.get("imgTres", " ");
+        imgCuatro = prefs.get("imgCuatro", " ");
+
         descImgUno.setText(descripcionimagenuno);
         descImgDos.setText(descripcionimagedos);
         descImgTres.setText(descripcionimagentres);
         descImgCuatro.setText(descripcionimagencuatro);
-    
-    
-    
-    
+
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-       Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
-       
-        prefs.put("descripcionimagenuno",descImgUno.getText());
-        prefs.put("descripcionimagedos",descImgDos.getText());
-        prefs.put("descripcionimagentres",descImgTres.getText());
-        prefs.put("descripcionimagencuatro",descImgCuatro.getText());
-        
-        String desc1 = descImgUno.getText(),         
-        desc2 = descImgDos.getText(),
-         desc3 = descImgTres.getText(),
-         desc4 = descImgCuatro.getText();
-        
-        String datos[] = {imgUno,imgDos,imgTres,imgCuatro,desc1,desc2,desc3,desc4};
-        
-     
+        Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
 
-        leePlantilla l = leePlantilla.obtenerInstancia();
+        prefs.put("descripcionimagenuno", descImgUno.getText());
+        prefs.put("descripcionimagedos", descImgDos.getText());
+        prefs.put("descripcionimagentres", descImgTres.getText());
+        prefs.put("descripcionimagencuatro", descImgCuatro.getText());
 
-        l.capturarDatosPerforacion(datos);
-        this.setVisible(false);
+        prefs.put("imgUno", imgUno);
+        prefs.put("imgDos", imgDos);
+        prefs.put("imgTres", imgTres);
+        prefs.put("imgCuatro", imgCuatro);
+
         JOptionPane.showMessageDialog(null, "Datos Guardados");
 
         this.setVisible(false);

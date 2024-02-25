@@ -18,6 +18,7 @@ public class Portada extends javax.swing.JFrame {
      */
     public Portada() {
         initComponents();
+        this.setLocationRelativeTo(null);
         getDatos();
     }
 
@@ -39,6 +40,8 @@ public class Portada extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CompaSer = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        dateTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +79,14 @@ public class Portada extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Fecha documento");
+
+        dateTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateTxtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -98,16 +109,22 @@ public class Portada extends javax.swing.JFrame {
                                     .addComponent(jLabel4))))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addGap(62, 62, 62)
-                            .addComponent(TextoT, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(373, 373, 373)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(TextoT, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(373, 373, 373))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(dateTxt)
+                                    .addGap(237, 237, 237)
+                                    .addComponent(jButton1)
+                                    .addGap(42, 42, 42)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(222, 222, 222)
-                        .addComponent(jLabel1)))
-                .addContainerGap(65, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(47, 47, 47))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,20 +141,28 @@ public class Portada extends javax.swing.JFrame {
                     .addComponent(CompaCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CompaSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextoT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(33, 33, 33))
+                .addGap(29, 29, 29)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,28 +179,33 @@ public class Portada extends javax.swing.JFrame {
     private void CompaSerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompaSerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CompaSerActionPerformed
-private void getDatos(){
-Preferences prefs = Preferences.userNodeForPackage(Portada.class);
+    private void getDatos() {
+        Preferences prefs = Preferences.userNodeForPackage(Portada.class);
         String Titulo = prefs.get("perfinternacional", " ");
         String Compañiacontratante = prefs.get("Compañiacontratante", " ");
         String comapañiaservicio = prefs.get("comapañiaservicio", " ");
-        
-        
+        String fechaDoc = prefs.get("fechaDoc", " ");
+
         TextoT.setText(Titulo);
         CompaCon.setText(Compañiacontratante);
         CompaSer.setText(comapañiaservicio);
+        dateTxt.setText(fechaDoc);
 
-
-}
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Preferences prefs = Preferences.userNodeForPackage(Portada.class);
-        prefs.put("Titulo",TextoT.getText());
-        prefs.put("Compañiacontratante",CompaCon.getText());
-        prefs.put("comapañiaservicio",CompaSer.getText());
-         JOptionPane.showMessageDialog(null, "Datos Guardados");
+        prefs.put("Titulo", TextoT.getText());
+        prefs.put("Compañiacontratante", CompaCon.getText());
+        prefs.put("comapañiaservicio", CompaSer.getText());
+        prefs.put("fechaDoc", dateTxt.getText());
+        JOptionPane.showMessageDialog(null, "Datos Guardados");
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void dateTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,11 +246,13 @@ Preferences prefs = Preferences.userNodeForPackage(Portada.class);
     private javax.swing.JTextField CompaCon;
     private javax.swing.JTextField CompaSer;
     private javax.swing.JTextField TextoT;
+    private javax.swing.JTextField dateTxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

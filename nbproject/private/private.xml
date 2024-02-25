@@ -3,12 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/tipoInsepeccionTwo.java</file>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/tipoInsepeccionThree.java</file>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/tipoInspeccion.java</file>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/Menu.java</file>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/Portada.java</file>
-            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/cargarEvidencias.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/cargarEvidencias.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/reportes/conexion.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/configuracionSistemas.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/plantillas.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/tipoInsepeccionTwo.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/tipoInspeccion.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/presenteadoA.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/infoPerforacion.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/home.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/tipoInsepeccionThree.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/proposito.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/reportes/leePlantilla.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/adminUsers.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/Portada.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/login.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/formularioPerforacion.java</file>
+            <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/Menu.java</file>
         </group>
     </open-files>
 </project-private>
