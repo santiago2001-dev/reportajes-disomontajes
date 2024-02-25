@@ -110,30 +110,29 @@ public class login extends javax.swing.JFrame {
         String user = txtUser.getText();
         String pass = String.valueOf(txtPassword.getPassword());
         String sql = "SELECT * FROM users WHERE password = '" + pass + "' and userName = '" + user + "' ";
+        Preferences prefs = Preferences.userNodeForPackage(login.class);
 
         try ( PreparedStatement statement = con.conectar().prepareStatement(sql)) {
-            // Establecer parámetros de la consulta
 
-            // Ejecutar la consulta y obtener el resultado
             try ( ResultSet resultSet = statement.executeQuery()) {
-                // Procesar el resultado
                 if (resultSet.next()) {
 
-                    JOptionPane.showMessageDialog(null, "Bienvenido " + user.toLowerCase());
-                    Preferences prefs = Preferences.userNodeForPackage(login.class);
-
-                    // Almacena una preferencia temporal
                     prefs.put("idUser", String.valueOf(resultSet.getInt("id")));
+                    prefs.put("tipoUser", String.valueOf(resultSet.getString("tipoUser")));
+                    String estadoUser = String.valueOf(resultSet.getString("estado"));
+                    if (estadoUser.equals("activo")) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + user.toLowerCase());
+                        progreso p = new progreso();
+                        p.setVisible(true);
+                        this.setVisible(false);
 
-                   
+                    } else {
+                        JOptionPane.showMessageDialog(this, "usuario inactivo");
 
-                    progreso p = new progreso();
-                    p.setVisible(true);
-                    this.setVisible(false);
+                    }
 
-                } else {
-                    JOptionPane.showMessageDialog(this, "usuario incorrecto");
                 }
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

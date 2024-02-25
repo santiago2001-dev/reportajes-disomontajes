@@ -16,6 +16,7 @@ public class proposito extends javax.swing.JFrame {
      */
     public proposito() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

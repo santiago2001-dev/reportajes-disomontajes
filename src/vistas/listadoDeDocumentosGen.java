@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas.perforacion;
+package vistas;
+
+import javax.swing.JOptionPane;
+import reportes.conexion;
 
 /**
  *
@@ -15,6 +18,21 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
      */
     public listadoDeDocumentosGen() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        validateAdmin();
+    }
+
+    public void validateAdmin() {
+        conexion con = new conexion();
+        int respuesta = con.validateTypeUser();
+        if (respuesta == 0) {
+            JOptionPane.showMessageDialog(this, "requiere permisos admistradores");
+            this.setVisible(false);
+            home h = new home();
+            h.setVisible(true);
+
+        }
+
     }
 
     /**

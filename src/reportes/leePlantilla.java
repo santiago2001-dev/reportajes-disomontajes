@@ -61,9 +61,7 @@ public class leePlantilla {
         return instancia;
     }
 
-    public void capturarDatosPerforacion(String datos[]) {
-        // Collections.addAll(infoPerforacion, datos);
-    }
+
 
     public void llenadoTabla(ArrayList<String> data, ArrayList<String> images, ArrayList<String> desc) {
         if (dataTable != null && imagePaths != null && descs != null) {
@@ -73,9 +71,7 @@ public class leePlantilla {
 
             String response = leeDoc();
             JOptionPane.showMessageDialog(null, response);
-            Menu m = new Menu();
             home h = new home();
-            m.setVisible(false);
             h.setVisible(true);
 
         } else {
@@ -167,7 +163,7 @@ public class leePlantilla {
                     replaceText(document, "descImgDos", vistaDos.get("descripcionimagedos", " "));
                     replaceText(document, "descImgTres", vistaDos.get("descripcionimagentres", " "));
                     replaceText(document, "descImgCuatro", vistaDos.get("descripcionimagencuatro", " "));
-                    // replaceText(document, "IdProposito",  vistaDos.get("descripcionimagenuno", " "));
+                    replaceText(document, "IdProposito",  vistaDos.get("propositoInspect", " "));
                     addTable(document, dataTable, imagePaths, descs);
                     String nameFile = path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx";
                     FileOutputStream fos = new FileOutputStream(nameFile);

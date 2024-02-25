@@ -8,6 +8,8 @@ package reportes;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.prefs.Preferences;
+import vistas.login;
 
 public class conexion {
 
@@ -34,16 +36,31 @@ public class conexion {
         return cx;
 
     }
-    
-    public void desconectar(){
-    
-        try{
-            
+
+    public void desconectar() {
+
+        try {
+
             cx.close();
-        }catch(SQLException  e){
+        } catch (SQLException e) {
             System.out.println(e);
-        
+
         }
-    
+
+    }
+
+    public int validateTypeUser() {
+        Preferences prefs = Preferences.userNodeForPackage(login.class);
+        int respuesta = 0;
+        String tipoUser = prefs.get("tipoUser", " ");
+        if (tipoUser.equals("administrador")) {
+            respuesta = 1;
+        } else if (tipoUser.equals(" ")) {
+            respuesta = 0;
+        } else {
+            respuesta = 0;
+        }
+
+        return respuesta;
     }
 }

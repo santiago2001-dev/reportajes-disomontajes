@@ -13,6 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import reportes.leePlantilla;
 import java.util.prefs.Preferences;
+import javax.swing.JOptionPane;
+import reportes.conexion;
+import vistas.perforacion.Menu;
 
 /**
  *
@@ -20,19 +23,14 @@ import java.util.prefs.Preferences;
  */
 public class home extends javax.swing.JFrame {
 
-   
-
     public home() {
         initComponents();
-         this.setLocationRelativeTo(null);
-                Preferences prefs = Preferences.userNodeForPackage(login.class);
+        this.setLocationRelativeTo(null);
+        Menu m = new Menu();
+        m.setVisible(false);
+        
 
-        // Obtiene y muestra la preferencia
-        String valor = prefs.get("idUser", "no esta");
-        System.out.println("Valor recuperado desde otra clase: " + valor);
-
-     
-     }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,13 +122,22 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void usersAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersAdminActionPerformed
+
+        conexion con = new conexion();
+        int respuesta = con.validateTypeUser();
+        if (respuesta == 0) {
+            JOptionPane.showMessageDialog(this, "requiere permisos admistradores");
+        } else {
             adminUsers a = new adminUsers();
             a.setVisible(true);
             this.setVisible(false);
+        }
     }//GEN-LAST:event_usersAdminActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        listadoDeDocumentosGen l = new listadoDeDocumentosGen();
+        this.setVisible(false);
+        l.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
@@ -140,8 +147,8 @@ public class home extends javax.swing.JFrame {
     private void crearInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearInformeActionPerformed
         plantillas p = new plantillas();
         p.setVisible(true);
-          this.setVisible(false);
-        
+        this.setVisible(false);
+
     }//GEN-LAST:event_crearInformeActionPerformed
 
     /**
@@ -178,8 +185,8 @@ public class home extends javax.swing.JFrame {
             }
         });
     }
-    
-        class FondoPanel extends JPanel {
+
+    class FondoPanel extends JPanel {
 
         private Image image = new ImageIcon("/vistas/Designer.jpeg").getImage();
 

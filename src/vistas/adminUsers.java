@@ -39,6 +39,19 @@ public class adminUsers extends javax.swing.JFrame {
 
     }
 
+    public void validateAdmin() {
+        conexion con = new conexion();
+        int respuesta = con.validateTypeUser();
+        if (respuesta == 0) {
+            JOptionPane.showMessageDialog(this, "requiere permisos admistradores");
+            this.setVisible(false);
+            home h = new home();
+            h.setVisible(true);
+
+        }
+
+    }
+
     public void listarUsuaraios() {
         conexion con = new conexion();
 
@@ -50,11 +63,11 @@ public class adminUsers extends javax.swing.JFrame {
         tableModel.addColumn("Estado");
         tableUsers.setModel(tableModel);
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
             // Establecer parámetros de la consulta
 
             // Ejecutar la consulta y obtener el resultado
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     Object[] row = new Object[]{
                         resultSet.getString("namesUser"),
@@ -95,8 +108,10 @@ public class adminUsers extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableUsers = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PANEL DE USUARIOS");
@@ -251,13 +266,25 @@ public class adminUsers extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        jButton2.setText("CREAR USUARIO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -271,13 +298,13 @@ public class adminUsers extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -300,9 +327,9 @@ public class adminUsers extends javax.swing.JFrame {
         conexion con = new conexion();
 
         String query = "SELECT namesUser,password FROM users where userName = " + "'" + userSelect.getSelectedItem() + "'";
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     namesInput.setText(resultSet.getString("namesUser"));
                     passInput.setText(resultSet.getString("password"));
@@ -329,7 +356,7 @@ public class adminUsers extends javax.swing.JFrame {
 
         String query = "UPDATE users SET namesUser=?, userName=?, password=?, tipoUser=?, estado=? WHERE userName=?";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
             statement.setString(1, namesUser);
             statement.setString(2, userName);
@@ -356,10 +383,16 @@ public class adminUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbtnActionPerformed
-      this.setVisible(false);
-      home h  = new home();
-      h.setVisible(true);
+        this.setVisible(false);
+        home h = new home();
+        h.setVisible(true);
     }//GEN-LAST:event_returnbtnActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        crearUsuario u = new crearUsuario();
+        u.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,6 +432,7 @@ public class adminUsers extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> estado;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -426,9 +460,9 @@ public class adminUsers extends javax.swing.JFrame {
 
         String query = "SELECT * FROM users";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     users ut = new users();
                     ut.setName(resultSet.getString("namesUser"));
@@ -455,9 +489,9 @@ public class adminUsers extends javax.swing.JFrame {
 
         String query = "SELECT * FROM typeUser";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     typeUsers ut = new typeUsers();
                     ut.setId(resultSet.getInt("id"));
@@ -483,9 +517,9 @@ public class adminUsers extends javax.swing.JFrame {
 
         String query = "SELECT * FROM estadoUser";
 
-        try (PreparedStatement statement = con.conectar().prepareStatement(query)) {
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
 
-            try (ResultSet resultSet = statement.executeQuery()) {
+            try ( ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     typeUsers ut = new typeUsers();
                     ut.setId(resultSet.getInt("id"));
