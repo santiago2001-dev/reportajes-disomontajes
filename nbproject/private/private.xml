@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/cargarEvidencias.java</file>
             <file>file:/C:/reportajes-disomontajes/src/reportes/conexion.java</file>
             <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/configuracionSistemas.java</file>
@@ -20,6 +21,10 @@
             <file>file:/C:/reportajes-disomontajes/src/vistas/login.java</file>
             <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/formularioPerforacion.java</file>
             <file>file:/C:/reportajes-disomontajes/src/vistas/perforacion/Menu.java</file>
+=======
+            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/crearUsuario.java</file>
+            <file>file:/C:/Users/pony8/OneDrive/Documentos/reportajes-disomontajes/src/vistas/perforacion/listadoDeDocumentosGen.java</file>
+>>>>>>> 78bdeea9b7fb33002f56b6219f7c1389a4094ef0
         </group>
     </open-files>
 </project-private>
