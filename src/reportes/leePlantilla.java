@@ -61,8 +61,6 @@ public class leePlantilla {
         return instancia;
     }
 
-
-
     public void llenadoTabla(ArrayList<String> data, ArrayList<String> images, ArrayList<String> desc) {
         if (dataTable != null && imagePaths != null && descs != null) {
             dataTable.addAll(data);
@@ -163,7 +161,9 @@ public class leePlantilla {
                     replaceText(document, "descImgDos", vistaDos.get("descripcionimagedos", " "));
                     replaceText(document, "descImgTres", vistaDos.get("descripcionimagentres", " "));
                     replaceText(document, "descImgCuatro", vistaDos.get("descripcionimagencuatro", " "));
-                    replaceText(document, "IdProposito",  vistaDos.get("propositoInspect", " "));
+                    replaceText(document, "IdProposito", vistaDos.get("propositoInspect", " "));
+
+                    //agregar datos a db de tabla de configuracion de sistemas
                     addTable(document, dataTable, imagePaths, descs);
                     String nameFile = path + "perforaccion-" + fechaHoraActualComoString + "-" + cadenaAleatoria + ".docx";
                     FileOutputStream fos = new FileOutputStream(nameFile);
@@ -177,9 +177,12 @@ public class leePlantilla {
                     insertImageWithApachePOI(nameFile, vistaDos.get("imgTres", " "), "imgTres");
                     insertImageWithApachePOI(nameFile, vistaDos.get("imgCuatro", " "), "imgCuatro");
                     try {
-                        vistaUno.clear();
 
+                        conexion con = new conexion();
+                        con.InsertDocument();
+                        vistaUno.clear();
                         System.out.println("Todas las preferencias han sido eliminadas.");
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

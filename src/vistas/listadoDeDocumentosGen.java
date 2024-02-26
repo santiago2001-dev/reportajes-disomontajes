@@ -4,7 +4,11 @@
  */
 package vistas;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import reportes.conexion;
 
 /**
@@ -19,21 +23,47 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
     public listadoDeDocumentosGen() {
         initComponents();
         this.setLocationRelativeTo(null);
-        validateAdmin();
+        getDocuments();
     }
+    public void getDocuments(){
+    
+    
+     conexion con = new conexion();
 
-    public void validateAdmin() {
-        conexion con = new conexion();
-        int respuesta = con.validateTypeUser();
-        if (respuesta == 0) {
-            JOptionPane.showMessageDialog(this, "requiere permisos admistradores");
-            this.setVisible(false);
-            home h = new home();
-            h.setVisible(true);
+        String query = "SELECT infoReporte.idUser, infoReporte.titulo, infoReporte.IDFECHADOC, users.namesUser " +
+                                                "FROM infoReporte " +
+                                                "INNER JOIN users ON infoReporte.idUser = users.id";
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("REPORTE");
+        tableModel.addColumn("FECHA");
+        tableModel.addColumn("USUARIO");
+        //tableModel.addColumn("VER DOCUMENTO");
+       // tableModel.addColumn("EDITAR DOCUMENTO");
+        tableUsers.setModel(tableModel);
 
+        try ( PreparedStatement statement = con.conectar().prepareStatement(query)) {
+            // Establecer parámetros de la consulta
+
+            // Ejecutar la consulta y obtener el resultado
+            try ( ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Object[] row = new Object[]{
+                        resultSet.getString("titulo"),
+                        resultSet.getString("IDFECHADOC"),
+                        resultSet.getString("namesUser"),
+                    };
+
+                    tableModel.addRow(row);
+
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
     }
+   
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,28 +76,33 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         Volver = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableUsers = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Listado de documentos ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Volver.setText("Volver");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverActionPerformed(evt);
+            }
+        });
+
+        tableUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "idDocumentos", "Usuario", "Fecha", "verDocumento", "editarDocumento"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        Volver.setText("Volver");
+        jScrollPane1.setViewportView(tableUsers);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,23 +114,22 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
                         .addGap(337, 337, 337)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(Volver)))
-                .addContainerGap(144, Short.MAX_VALUE))
+                        .addGap(208, 208, 208)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Volver)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(Volver)
-                .addGap(48, 48, 48))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,6 +145,12 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+        this.setVisible(false);
+        home h = new home();
+        h.setVisible(true);
+    }//GEN-LAST:event_VolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +192,6 @@ public class listadoDeDocumentosGen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableUsers;
     // End of variables declaration//GEN-END:variables
 }

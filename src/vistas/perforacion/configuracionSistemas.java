@@ -154,7 +154,6 @@ public class configuracionSistemas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveSisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSisbtnActionPerformed
-            Menu m = new Menu();
 
         String sistem = (String) jComboBox1.getSelectedItem();
         sistemas.add(sistem);

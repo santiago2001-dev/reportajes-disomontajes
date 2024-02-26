@@ -28,7 +28,6 @@ public class home extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         Menu m = new Menu();
         m.setVisible(false);
-        
 
     }
 
@@ -135,9 +134,16 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_usersAdminActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        listadoDeDocumentosGen l = new listadoDeDocumentosGen();
-        this.setVisible(false);
-        l.setVisible(true);
+
+        conexion con = new conexion();
+        int respuesta = con.validateTypeUser();
+        if (respuesta == 0) {
+            JOptionPane.showMessageDialog(this, "requiere permisos admistradores");
+        } else {
+         listadoDeDocumentosGen l = new listadoDeDocumentosGen();
+            this.setVisible(false);
+            l.setVisible(true);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
