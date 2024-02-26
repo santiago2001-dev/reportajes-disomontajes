@@ -418,13 +418,11 @@ public class formularioPerforacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombretxt3ActionPerformed
 
-    
     //funcion para poner datos en los labels 
     private void getDatos() {
         Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
 
         String equipoRieg = prefs.get("equipoRieg", " ");
- 
 
         String nombre1 = prefs.get("nombre1", " ");
         String celular1 = prefs.get("celular1", " ");
@@ -442,7 +440,6 @@ public class formularioPerforacion extends javax.swing.JFrame {
         String depa = prefs.get("depa", " ");
 
         pozotxt.setText(equipoRieg);
-
 
         nombre1txt.setText(nombre1);
         celulart1txt.setText(celular1);
@@ -462,7 +459,6 @@ public class formularioPerforacion extends javax.swing.JFrame {
     }
     private void siguienteUnoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteUnoBtnActionPerformed
 
-       
         Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
 
         prefs.put("equipoRieg", equipoRiegtxt1.getText());
@@ -481,12 +477,13 @@ public class formularioPerforacion extends javax.swing.JFrame {
         prefs.put("municipio", municipiotxt.getText());
         prefs.put("pozo", pozotxt.getText());
         prefs.put("depa", depatxt.getText());
-        
-            JOptionPane.showMessageDialog(null, "Datos Guardados");
 
+        JOptionPane.showMessageDialog(null, "Datos Guardados");
 
         this.setVisible(false);
-       
+        presenteadoA p = new presenteadoA();
+        p.setVisible(true);
+
 
     }//GEN-LAST:event_siguienteUnoBtnActionPerformed
 
