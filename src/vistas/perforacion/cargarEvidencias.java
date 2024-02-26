@@ -58,6 +58,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         btnImg2.setText("SELECCIONA ARCHIVO");
         btnImg2.addActionListener(new java.awt.event.ActionListener() {

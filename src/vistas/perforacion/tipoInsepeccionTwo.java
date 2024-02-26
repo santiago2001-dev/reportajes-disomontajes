@@ -62,6 +62,7 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
         Wk3txt11 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel195.setText("PERF");
 
@@ -172,10 +173,6 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel209)
                 .addGap(134, 134, 134))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283))
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
@@ -200,12 +197,7 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel204)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 148, Short.MAX_VALUE)
-                        .addComponent(jLabel211, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
@@ -222,8 +214,11 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                                 .addComponent(jLabel208, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
-                                .addComponent(Wk4txt10)))
-                        .addGap(78, 78, 78))
+                                .addComponent(Wk4txt10))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(nextbtn10)))
+                        .addGap(57, 57, 57))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,43 +226,41 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                                 .addComponent(jLabel206)
                                 .addGap(147, 147, 147))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addComponent(nextbtn10)
-                                .addGap(315, 315, 315))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel197)
-                                .addGap(32, 32, 32))))))
+                                .addGap(32, 32, 32))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                .addComponent(Wk3txt11))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel211, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(90, 90, 90))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(324, 324, 324))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(Perf1txt10)
+                .addGap(126, 126, 126)
+                .addComponent(Wk1txt10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Perf3txt10)
+                .addGap(206, 206, 206))
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel13Layout.createSequentialGroup()
                     .addGap(307, 307, 307)
                     .addComponent(jLabel200, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(373, Short.MAX_VALUE)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addGap(91, 91, 91)
-                    .addComponent(Perf1txt10)
-                    .addContainerGap(621, Short.MAX_VALUE)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addGap(246, 246, 246)
-                    .addComponent(Wk1txt10)
-                    .addContainerGap(472, Short.MAX_VALUE)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(504, Short.MAX_VALUE)
-                    .addComponent(Perf3txt10)
-                    .addGap(208, 208, 208)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(624, Short.MAX_VALUE)
-                    .addComponent(Wk3txt11)
-                    .addGap(94, 94, 94)))
+                    .addContainerGap(433, Short.MAX_VALUE)))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(59, 59, 59)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel204, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel197, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -285,13 +278,20 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                         .addComponent(jLabel207, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel208, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel199, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Perf3txt10)
+                            .addComponent(Wk3txt11)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Wk1txt10)
+                                .addComponent(Perf1txt10)))
+                        .addGap(17, 17, 17)
                         .addComponent(jLabel209, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -312,51 +312,25 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Perf4txt10)
                             .addComponent(Wk4txt10))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(nextbtn10)
-                .addGap(57, 57, 57))
+                .addGap(21, 21, 21))
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel13Layout.createSequentialGroup()
                     .addGap(229, 229, 229)
                     .addComponent(jLabel200, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(289, Short.MAX_VALUE)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(267, Short.MAX_VALUE)
-                    .addComponent(Perf1txt10)
-                    .addGap(228, 228, 228)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(257, Short.MAX_VALUE)
-                    .addComponent(Wk1txt10)
-                    .addGap(238, 238, 238)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(252, Short.MAX_VALUE)
-                    .addComponent(Perf3txt10)
-                    .addGap(243, 243, 243)))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                    .addContainerGap(252, Short.MAX_VALUE)
-                    .addComponent(Wk3txt11)
-                    .addGap(243, 243, 243)))
+                    .addContainerGap(326, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -468,197 +442,14 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Perf1txt;
-    private javax.swing.JCheckBox Perf1txt1;
     private javax.swing.JCheckBox Perf1txt10;
-    private javax.swing.JCheckBox Perf1txt2;
-    private javax.swing.JCheckBox Perf1txt3;
-    private javax.swing.JCheckBox Perf1txt4;
-    private javax.swing.JCheckBox Perf1txt5;
-    private javax.swing.JCheckBox Perf1txt6;
-    private javax.swing.JCheckBox Perf1txt7;
-    private javax.swing.JCheckBox Perf1txt8;
-    private javax.swing.JCheckBox Perf1txt9;
-    private javax.swing.JCheckBox Perf2txt;
-    private javax.swing.JCheckBox Perf2txt1;
     private javax.swing.JCheckBox Perf2txt10;
-    private javax.swing.JCheckBox Perf2txt2;
-    private javax.swing.JCheckBox Perf2txt3;
-    private javax.swing.JCheckBox Perf2txt4;
-    private javax.swing.JCheckBox Perf2txt5;
-    private javax.swing.JCheckBox Perf2txt6;
-    private javax.swing.JCheckBox Perf2txt7;
-    private javax.swing.JCheckBox Perf2txt8;
-    private javax.swing.JCheckBox Perf2txt9;
-    private javax.swing.JCheckBox Perf3txt;
-    private javax.swing.JCheckBox Perf3txt1;
     private javax.swing.JCheckBox Perf3txt10;
-    private javax.swing.JCheckBox Perf3txt2;
-    private javax.swing.JCheckBox Perf3txt3;
-    private javax.swing.JCheckBox Perf3txt4;
-    private javax.swing.JCheckBox Perf3txt5;
-    private javax.swing.JCheckBox Perf3txt6;
-    private javax.swing.JCheckBox Perf3txt7;
-    private javax.swing.JCheckBox Perf3txt8;
-    private javax.swing.JCheckBox Perf3txt9;
-    private javax.swing.JCheckBox Perf4txt;
-    private javax.swing.JCheckBox Perf4txt1;
     private javax.swing.JCheckBox Perf4txt10;
-    private javax.swing.JCheckBox Perf4txt2;
-    private javax.swing.JCheckBox Perf4txt3;
-    private javax.swing.JCheckBox Perf4txt4;
-    private javax.swing.JCheckBox Perf4txt5;
-    private javax.swing.JCheckBox Perf4txt6;
-    private javax.swing.JCheckBox Perf4txt7;
-    private javax.swing.JCheckBox Perf4txt8;
-    private javax.swing.JCheckBox Perf4txt9;
-    private javax.swing.JCheckBox Wk1txt;
-    private javax.swing.JCheckBox Wk1txt1;
     private javax.swing.JCheckBox Wk1txt10;
-    private javax.swing.JCheckBox Wk1txt2;
-    private javax.swing.JCheckBox Wk1txt3;
-    private javax.swing.JCheckBox Wk1txt4;
-    private javax.swing.JCheckBox Wk1txt5;
-    private javax.swing.JCheckBox Wk1txt6;
-    private javax.swing.JCheckBox Wk1txt7;
-    private javax.swing.JCheckBox Wk1txt8;
-    private javax.swing.JCheckBox Wk1txt9;
-    private javax.swing.JCheckBox Wk2txt;
-    private javax.swing.JCheckBox Wk2txt1;
     private javax.swing.JCheckBox Wk2txt10;
-    private javax.swing.JCheckBox Wk2txt2;
-    private javax.swing.JCheckBox Wk2txt3;
-    private javax.swing.JCheckBox Wk2txt4;
-    private javax.swing.JCheckBox Wk2txt5;
-    private javax.swing.JCheckBox Wk2txt6;
-    private javax.swing.JCheckBox Wk2txt7;
-    private javax.swing.JCheckBox Wk2txt8;
-    private javax.swing.JCheckBox Wk2txt9;
-    private javax.swing.JCheckBox Wk3txt1;
-    private javax.swing.JCheckBox Wk3txt10;
     private javax.swing.JCheckBox Wk3txt11;
-    private javax.swing.JCheckBox Wk3txt2;
-    private javax.swing.JCheckBox Wk3txt3;
-    private javax.swing.JCheckBox Wk3txt4;
-    private javax.swing.JCheckBox Wk3txt5;
-    private javax.swing.JCheckBox Wk3txt6;
-    private javax.swing.JCheckBox Wk3txt7;
-    private javax.swing.JCheckBox Wk3txt8;
-    private javax.swing.JCheckBox Wk3txt9;
-    private javax.swing.JCheckBox Wk4txt;
-    private javax.swing.JCheckBox Wk4txt1;
     private javax.swing.JCheckBox Wk4txt10;
-    private javax.swing.JCheckBox Wk4txt2;
-    private javax.swing.JCheckBox Wk4txt3;
-    private javax.swing.JCheckBox Wk4txt4;
-    private javax.swing.JCheckBox Wk4txt5;
-    private javax.swing.JCheckBox Wk4txt6;
-    private javax.swing.JCheckBox Wk4txt7;
-    private javax.swing.JCheckBox Wk4txt8;
-    private javax.swing.JCheckBox Wk4txt9;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
-    private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel110;
-    private javax.swing.JLabel jLabel111;
-    private javax.swing.JLabel jLabel112;
-    private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
-    private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
-    private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
-    private javax.swing.JLabel jLabel119;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
-    private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
-    private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
-    private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
-    private javax.swing.JLabel jLabel143;
-    private javax.swing.JLabel jLabel144;
-    private javax.swing.JLabel jLabel145;
-    private javax.swing.JLabel jLabel146;
-    private javax.swing.JLabel jLabel147;
-    private javax.swing.JLabel jLabel148;
-    private javax.swing.JLabel jLabel149;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel150;
-    private javax.swing.JLabel jLabel151;
-    private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel153;
-    private javax.swing.JLabel jLabel154;
-    private javax.swing.JLabel jLabel155;
-    private javax.swing.JLabel jLabel156;
-    private javax.swing.JLabel jLabel157;
-    private javax.swing.JLabel jLabel158;
-    private javax.swing.JLabel jLabel159;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel160;
-    private javax.swing.JLabel jLabel161;
-    private javax.swing.JLabel jLabel162;
-    private javax.swing.JLabel jLabel163;
-    private javax.swing.JLabel jLabel164;
-    private javax.swing.JLabel jLabel165;
-    private javax.swing.JLabel jLabel166;
-    private javax.swing.JLabel jLabel167;
-    private javax.swing.JLabel jLabel168;
-    private javax.swing.JLabel jLabel169;
-    private javax.swing.JLabel jLabel170;
-    private javax.swing.JLabel jLabel171;
-    private javax.swing.JLabel jLabel172;
-    private javax.swing.JLabel jLabel173;
-    private javax.swing.JLabel jLabel174;
-    private javax.swing.JLabel jLabel175;
-    private javax.swing.JLabel jLabel176;
-    private javax.swing.JLabel jLabel177;
-    private javax.swing.JLabel jLabel178;
-    private javax.swing.JLabel jLabel179;
-    private javax.swing.JLabel jLabel180;
-    private javax.swing.JLabel jLabel181;
-    private javax.swing.JLabel jLabel182;
-    private javax.swing.JLabel jLabel183;
-    private javax.swing.JLabel jLabel184;
-    private javax.swing.JLabel jLabel185;
-    private javax.swing.JLabel jLabel186;
-    private javax.swing.JLabel jLabel187;
-    private javax.swing.JLabel jLabel188;
-    private javax.swing.JLabel jLabel189;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel190;
-    private javax.swing.JLabel jLabel191;
-    private javax.swing.JLabel jLabel192;
-    private javax.swing.JLabel jLabel193;
-    private javax.swing.JLabel jLabel194;
     private javax.swing.JLabel jLabel195;
     private javax.swing.JLabel jLabel196;
     private javax.swing.JLabel jLabel197;
@@ -675,94 +466,7 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel209;
     private javax.swing.JLabel jLabel210;
     private javax.swing.JLabel jLabel211;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JButton nextbtn;
-    private javax.swing.JButton nextbtn1;
     private javax.swing.JButton nextbtn10;
-    private javax.swing.JButton nextbtn2;
-    private javax.swing.JButton nextbtn3;
-    private javax.swing.JButton nextbtn4;
-    private javax.swing.JButton nextbtn5;
-    private javax.swing.JButton nextbtn6;
-    private javax.swing.JButton nextbtn7;
-    private javax.swing.JButton nextbtn8;
-    private javax.swing.JButton nextbtn9;
     // End of variables declaration//GEN-END:variables
 }

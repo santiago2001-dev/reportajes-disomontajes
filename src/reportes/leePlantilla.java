@@ -71,8 +71,7 @@ public class leePlantilla {
 
             String response = leeDoc();
             JOptionPane.showMessageDialog(null, response);
-            home h = new home();
-            h.setVisible(true);
+            
 
         } else {
             System.out.println("Alguno de los parámetros es null");
@@ -189,7 +188,7 @@ public class leePlantilla {
 
                 } catch (IOException e) {
                     Message = " Error al generar documento";
-
+                    
                 }
                 break;
 
