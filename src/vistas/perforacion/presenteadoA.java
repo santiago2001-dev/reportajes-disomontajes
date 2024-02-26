@@ -59,6 +59,7 @@ public class presenteadoA extends javax.swing.JFrame {
         siguienteUnoBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel6.setText("PERSONA 1");
 

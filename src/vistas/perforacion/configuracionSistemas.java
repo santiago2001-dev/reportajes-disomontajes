@@ -56,6 +56,7 @@ public class configuracionSistemas extends javax.swing.JFrame {
         saveSisbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Configuracion De sistemas");
@@ -154,7 +155,11 @@ public class configuracionSistemas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveSisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSisbtnActionPerformed
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> 52ea9d4213f06001634d9d11c895d988a7e4ea6a
         String sistem = (String) jComboBox1.getSelectedItem();
         sistemas.add(sistem);
         inmgs.add(imgRoute);

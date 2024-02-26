@@ -106,6 +106,7 @@ public class infoPerforacion extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel8.setText("INIICIO");
 
