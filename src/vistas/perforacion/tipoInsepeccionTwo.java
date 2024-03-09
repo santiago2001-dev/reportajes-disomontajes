@@ -35,22 +35,16 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel13 = new javax.swing.JPanel();
-        jLabel195 = new javax.swing.JLabel();
-        jLabel196 = new javax.swing.JLabel();
         jLabel197 = new javax.swing.JLabel();
         jLabel198 = new javax.swing.JLabel();
         jLabel199 = new javax.swing.JLabel();
         jLabel200 = new javax.swing.JLabel();
-        jLabel201 = new javax.swing.JLabel();
         jLabel202 = new javax.swing.JLabel();
         jLabel203 = new javax.swing.JLabel();
         jLabel204 = new javax.swing.JLabel();
-        jLabel206 = new javax.swing.JLabel();
         jLabel207 = new javax.swing.JLabel();
         jLabel208 = new javax.swing.JLabel();
         jLabel209 = new javax.swing.JLabel();
-        jLabel210 = new javax.swing.JLabel();
-        jLabel211 = new javax.swing.JLabel();
         nextbtn10 = new javax.swing.JButton();
         Wk4txt10 = new javax.swing.JCheckBox();
         Perf2txt10 = new javax.swing.JCheckBox();
@@ -60,273 +54,124 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
         Wk1txt10 = new javax.swing.JCheckBox();
         Perf3txt10 = new javax.swing.JCheckBox();
         Wk3txt11 = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jLabel195.setText("PERF");
-
-        jLabel196.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel196.setText("WK");
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel197.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel197.setText("INSPECCIÓN DE CUMPLIMIENTO, FUNCIONALIDAD Y RECIBO");
+        jLabel197.setText("-INSPECCIÓN DE CUMPLIMIENTO, FUNCIONALIDAD Y RECIBO");
+        jPanel13.add(jLabel197, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
+        jLabel198.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel198.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel198.setText("WK");
+        jPanel13.add(jLabel198, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, 40, 20));
 
+        jLabel199.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel199.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel199.setText("PERF");
+        jPanel13.add(jLabel199, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 40, 20));
 
         jLabel200.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel200.setText("CELULAR");
+        jPanel13.add(jLabel200, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 229, 77, 0));
 
-        jLabel201.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel201.setText("INTERNACIONAL");
-
+        jLabel202.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel202.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel202.setText("NIVEL DE INSPECCION");
+        jPanel13.add(jLabel202, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 182, 32));
 
         jLabel203.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel203.setText("NACIONAL");
+        jPanel13.add(jLabel203, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 20));
 
         jLabel204.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel204.setText("INSPECCIÓN VISUAL PARA SELECCIÓN DE EQUIPOS Y HERRAMIENTAS");
+        jLabel204.setText("-INSPECCIÓN VISUAL PARA SELECCIÓN DE EQUIPOS Y HERRAMIENTAS");
+        jPanel13.add(jLabel204, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
 
-        jLabel206.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel206.setText("NACIONAL");
-
+        jLabel207.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel207.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel207.setText("PERF");
+        jPanel13.add(jLabel207, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 60, 20));
 
+        jLabel208.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel208.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel208.setText("WK");
+        jPanel13.add(jLabel208, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 40, 20));
 
         jLabel209.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel209.setText("INTERNACIONAL");
+        jPanel13.add(jLabel209, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, 20));
 
-        jLabel210.setText("PERF");
-
-        jLabel211.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel211.setText("WK");
-
-        nextbtn10.setText("guardar");
+        nextbtn10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/savedisk_floppydisk_guardar_1543.png"))); // NOI18N
         nextbtn10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextbtn1ActionPerformed(evt);
             }
         });
+        jPanel13.add(nextbtn10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, -1));
 
-        Wk4txt10.setText("wk");
         Wk4txt10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Wk4txt1ActionPerformed(evt);
             }
         });
+        jPanel13.add(Wk4txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
-        Perf2txt10.setText("perf");
         Perf2txt10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Perf2txt1ActionPerformed(evt);
             }
         });
+        jPanel13.add(Perf2txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
+        jPanel13.add(Perf4txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, -1, -1));
 
-        Perf4txt10.setText("perf");
-
-        Wk2txt10.setText("wk");
         Wk2txt10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Wk2txt1ActionPerformed(evt);
             }
         });
+        jPanel13.add(Wk2txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
 
-        Perf1txt10.setText("perf");
         Perf1txt10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Perf1txt1ActionPerformed(evt);
             }
         });
+        jPanel13.add(Perf1txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
 
-        Wk1txt10.setText("wk");
         Wk1txt10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Wk1txt1ActionPerformed(evt);
             }
         });
+        jPanel13.add(Wk1txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
 
-        Perf3txt10.setText("perf");
+        Perf3txt10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Perf3txt10ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(Perf3txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, -1));
 
-        Wk3txt11.setText("wk");
         Wk3txt11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Wk3txt2ActionPerformed(evt);
             }
         });
+        jPanel13.add(Wk3txt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(jLabel201)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel209)
-                .addGap(134, 134, 134))
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(jLabel203))
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
-                                    .addComponent(Perf2txt10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Wk2txt10))
-                                .addGroup(jPanel13Layout.createSequentialGroup()
-                                    .addComponent(jLabel195, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel196, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel13Layout.createSequentialGroup()
-                                    .addComponent(jLabel199, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(88, 88, 88)
-                                    .addComponent(jLabel198, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel204)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel207, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel210, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Perf4txt10))))
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(jLabel208, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(Wk4txt10))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(nextbtn10)))
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel206)
-                                .addGap(147, 147, 147))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel197)
-                                .addGap(32, 32, 32))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                                .addComponent(Wk3txt11))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel211, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(90, 90, 90))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(324, 324, 324))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(Perf1txt10)
-                .addGap(126, 126, 126)
-                .addComponent(Wk1txt10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Perf3txt10)
-                .addGap(206, 206, 206))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addGap(307, 307, 307)
-                    .addComponent(jLabel200, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(433, Short.MAX_VALUE)))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel204, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel197, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel203, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel206, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel198, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel207, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel208, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel199, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Perf3txt10)
-                            .addComponent(Wk3txt11)
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Wk1txt10)
-                                .addComponent(Perf1txt10)))
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel209, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel195, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel196, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel211, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel210, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Perf2txt10)
-                            .addComponent(Wk2txt10)))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Perf4txt10)
-                            .addComponent(Wk4txt10))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(nextbtn10)
-                .addGap(21, 21, 21))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addGap(229, 229, 229)
-                    .addComponent(jLabel200, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(326, Short.MAX_VALUE)))
-        );
+        jButton1.setText("Volver");
+        jPanel13.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,6 +231,10 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Datos Guardados");
         this.setVisible(false);
     }//GEN-LAST:event_nextbtn1ActionPerformed
+
+    private void Perf3txt10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf3txt10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Perf3txt10ActionPerformed
     private void getDatos() {
         Preferences prefs = Preferences.userNodeForPackage(tipoInsepeccionTwo.class);
         selectedCheck(Perf1txt10, prefs.getInt("IVSEH1", 0));
@@ -450,22 +299,17 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
     private javax.swing.JCheckBox Wk2txt10;
     private javax.swing.JCheckBox Wk3txt11;
     private javax.swing.JCheckBox Wk4txt10;
-    private javax.swing.JLabel jLabel195;
-    private javax.swing.JLabel jLabel196;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel197;
     private javax.swing.JLabel jLabel198;
     private javax.swing.JLabel jLabel199;
     private javax.swing.JLabel jLabel200;
-    private javax.swing.JLabel jLabel201;
     private javax.swing.JLabel jLabel202;
     private javax.swing.JLabel jLabel203;
     private javax.swing.JLabel jLabel204;
-    private javax.swing.JLabel jLabel206;
     private javax.swing.JLabel jLabel207;
     private javax.swing.JLabel jLabel208;
     private javax.swing.JLabel jLabel209;
-    private javax.swing.JLabel jLabel210;
-    private javax.swing.JLabel jLabel211;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JButton nextbtn10;
     // End of variables declaration//GEN-END:variables

@@ -38,297 +38,172 @@ public class presenteadoA extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        correotxt3 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         celulartxt3 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        nombre1txt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        celulart1txt = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        correotxt = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         nombretxt2 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        celulartxt2 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        correotxt2 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         nombretxt3 = new javax.swing.JTextField();
         siguienteUnoBtn = new javax.swing.JButton();
+        celulart1txt = new javax.swing.JTextField();
+        nombre1txt = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        correotxt1 = new javax.swing.JTextField();
+        celulartxt2 = new javax.swing.JTextField();
+        correotxt2 = new javax.swing.JTextField();
+        correotxt3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jLabel6.setText("PERSONA 1");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setText("PERSONA 1");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 103, 37));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel7.setText("INFORMACION DE CONTACTO");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
         jLabel8.setText("CELULAR");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 97, 20));
 
         jLabel9.setText("NOMBRE");
-
-        correotxt3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                correotxt3ActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 97, 20));
 
         jLabel10.setText("CORREO");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 97, 20));
 
         celulartxt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 celulartxt3ActionPerformed(evt);
             }
         });
+        jPanel2.add(celulartxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 117, -1));
 
         jLabel12.setText("PERSONA 2");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 103, 37));
 
         jLabel13.setText("NOMBRE");
-
-        nombre1txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombre1txtActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 97, 32));
 
         jLabel14.setText("CELULAR");
-
-        celulart1txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                celulart1txtActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 97, 20));
 
         jLabel15.setText("CORREO");
-
-        correotxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                correotxtActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 60, 32));
 
         jLabel17.setText("NOMBRE");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 97, 20));
 
         nombretxt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombretxt2ActionPerformed(evt);
             }
         });
+        jPanel2.add(nombretxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 150, -1));
 
         jLabel18.setText("CELULAR");
-
-        celulartxt2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                celulartxt2ActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 97, 20));
 
         jLabel19.setText("CORREO");
-
-        correotxt2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                correotxt2ActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 97, 30));
 
         jLabel20.setText("PERSONA 3");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 103, 30));
 
         nombretxt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombretxt3ActionPerformed(evt);
             }
         });
+        jPanel2.add(nombretxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 150, -1));
 
-        siguienteUnoBtn.setText("guardar");
+        siguienteUnoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/savedisk_floppydisk_guardar_1543.png"))); // NOI18N
         siguienteUnoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siguienteUnoBtnActionPerformed(evt);
             }
         });
+        jPanel2.add(siguienteUnoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(celulart1txt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(nombre1txt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)))
-                                .addGap(79, 79, 79)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(85, 85, 85))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(correotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addGap(8, 8, 8)
-                                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(65, 65, 65)))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(celulartxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(correotxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(nombretxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(20, 20, 20)))
-                                .addGap(6, 6, 6)))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(30, 30, 30)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(siguienteUnoBtn)
-                                                .addComponent(correotxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(269, 269, 269))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(celulartxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nombretxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nombre1txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nombretxt3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nombretxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(celulart1txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(celulartxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(celulartxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(correotxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correotxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(siguienteUnoBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        celulart1txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celulart1txtActionPerformed(evt);
+            }
+        });
+        jPanel2.add(celulart1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 130, -1));
+
+        nombre1txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombre1txtActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nombre1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 150, -1));
+
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        correotxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correotxt1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(correotxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 120, -1));
+
+        celulartxt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celulartxt2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(celulartxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 120, -1));
+
+        correotxt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correotxt2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(correotxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 120, -1));
+
+        correotxt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correotxt3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(correotxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void correotxt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxt3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_correotxt3ActionPerformed
-
     private void celulartxt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celulartxt3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_celulartxt3ActionPerformed
 
-    private void nombre1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre1txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombre1txtActionPerformed
-
-    private void celulart1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celulart1txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_celulart1txtActionPerformed
-
-    private void correotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_correotxtActionPerformed
-
     private void nombretxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombretxt2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombretxt2ActionPerformed
-
-    private void celulartxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celulartxt2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_celulartxt2ActionPerformed
-
-    private void correotxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxt2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_correotxt2ActionPerformed
 
     private void nombretxt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombretxt3ActionPerformed
         // TODO add your handling code here:
@@ -340,7 +215,7 @@ public class presenteadoA extends javax.swing.JFrame {
 
         prefs.put("nombre4", nombre1txt.getText());
         prefs.put("celular4", celulart1txt.getText());
-        prefs.put("correo4", correotxt.getText());
+        prefs.put("correo4", correotxt1.getText());
 
         prefs.put("nombre5", nombretxt2.getText());
         prefs.put("celular5", celulartxt2.getText());
@@ -351,10 +226,42 @@ public class presenteadoA extends javax.swing.JFrame {
         prefs.put("correo6", correotxt3.getText());
 
         JOptionPane.showMessageDialog(null, "Datos Guardados");
-
+        infoPerforacion p = new infoPerforacion();
+        p.setVisible(true);
         this.setVisible(false);
 
     }//GEN-LAST:event_siguienteUnoBtnActionPerformed
+
+    private void celulart1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celulart1txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celulart1txtActionPerformed
+
+    private void nombre1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre1txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombre1txtActionPerformed
+
+    private void correotxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correotxt1ActionPerformed
+
+    private void celulartxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celulartxt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celulartxt2ActionPerformed
+
+    private void correotxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correotxt2ActionPerformed
+
+    private void correotxt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correotxt3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correotxt3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        formularioPerforacion p =new formularioPerforacion();
+        p.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,9 +302,10 @@ public class presenteadoA extends javax.swing.JFrame {
     private javax.swing.JTextField celulart1txt;
     private javax.swing.JTextField celulartxt2;
     private javax.swing.JTextField celulartxt3;
-    private javax.swing.JTextField correotxt;
+    private javax.swing.JTextField correotxt1;
     private javax.swing.JTextField correotxt2;
     private javax.swing.JTextField correotxt3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -434,7 +342,7 @@ public class presenteadoA extends javax.swing.JFrame {
         String correo3 = prefs.get("correo6", " ");
         nombre1txt.setText(nombre1);
         celulart1txt.setText(celular1);
-        correotxt.setText(correo1);
+        correotxt1.setText(correo1);
 
         nombretxt2.setText(nombre2);
         celulartxt2.setText(celular2);
