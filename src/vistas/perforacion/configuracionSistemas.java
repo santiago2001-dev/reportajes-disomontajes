@@ -5,33 +5,19 @@
  */
 package vistas.perforacion;
 
-import java.awt.Dimension;
-import java.awt.image.BufferedImage;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.Preferences;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.table.DefaultTableModel;
 import models.listTypeUsers;
 import models.typeUsers;
 import reportes.conexion;
 import reportes.leePlantilla;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import java.awt.Image;
+
 /**
  *
  * @author taesi
@@ -46,7 +32,6 @@ public class configuracionSistemas extends javax.swing.JFrame {
     public configuracionSistemas() {
         initComponents();
         this.setLocationRelativeTo(null);
-        getData();
         getSistemas(jComboBox1);
     }
 
@@ -69,13 +54,9 @@ public class configuracionSistemas extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         nextSystembtn = new javax.swing.JButton();
         saveSisbtn = new javax.swing.JButton();
-<<<<<<< HEAD
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableData = new javax.swing.JTable();
-=======
-        jButton1 = new javax.swing.JButton();
->>>>>>> 50b92a298f065399879eb2bf7c265537fc34686b
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -172,156 +153,49 @@ public class configuracionSistemas extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        tableData.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tableData);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(39, 39, 39)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveSisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSisbtnActionPerformed
-        Preferences prefs = Preferences.userNodeForPackage(configuracionSistemas.class);
-
+           
         String sistem = (String) jComboBox1.getSelectedItem();
         sistemas.add(sistem);
         inmgs.add(imgRoute);
         descs.add(descTXt.getText());
-        prefs.put("sistemas", sistemas.toString());
-        prefs.put("imgs", inmgs.toString());
-        prefs.put("descs", descs.toString());
-
+   
+        
         leePlantilla l = leePlantilla.obtenerInstancia();
-        l.llenadoTabla();
-        this.setVisible(false);
 
+        l.llenadoTabla(sistemas, inmgs, descs);
+        this.setVisible(false);
+        
         // l.llamadoDatos();
     }//GEN-LAST:event_saveSisbtnActionPerformed
-    private void getData() {
-        leePlantilla l = leePlantilla.obtenerInstancia();
-
-        Preferences prefs = Preferences.userNodeForPackage(configuracionSistemas.class);
-        String sistemasPrefs = prefs.get("sistemas", "");
-        String imgsPrefs = prefs.get("imgs", "");
-        String descsPerfs = prefs.get("descs", "");
-        sistemas.addAll(l.getArraylistPerfs(sistemasPrefs));
-        inmgs.addAll(l.getArraylistPerfs(imgsPrefs));
-        descs.addAll(l.getArraylistPerfs(descsPerfs));
-
-        if (!descs.isEmpty() && descs.size() == sistemas.size() && descs.size() == inmgs.size()) {
-            descTXt.setText(descs.get(0));
-
-        } else {
-            // Manejar el caso en el que las listas no tienen la misma longitud o están vacías
-            System.out.println("Las listas no tienen la misma longitud o están vacías.");
-        }
-
-    }
-
-public void listarConfig() {
-    DefaultTableModel tableModel = new DefaultTableModel();
-    tableModel.addColumn("sistemas");
-    tableModel.addColumn("Descripcion");
-    tableModel.addColumn("imagen");
-
-    for (int i = 0; i < sistemas.size(); i++) {
-        Object[] row = new Object[3];
-        row[0] = sistemas.get(i);
-        row[1] = descs.get(i);
-
-        // Aquí cargamos la imagen desde un array de bytes (imagens.get(i)) y la mostramos en un JLabel
-        try {
-            String imageBytes = inmgs.get(i);
-            ImageIcon imageIcon = new ImageIcon(imageBytes);
-            JLabel imageLabel = new JLabel(imageIcon);
-            row[2] = imageLabel;
-        } catch (Exception e) {
-            row[2] = "No imagen";
-        }
-
-        tableModel.addRow(row);
-    }
-
-    tableData.setModel(tableModel);
-}
-
-
-public JLabel seeImage(String route, int width, int height) {
-    ImageIcon icono = new ImageIcon(route);
-    
-    // Escalar la imagen al nuevo tamaño
-    Image imagenEscalada = icono.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-    
-    // Crear un nuevo ImageIcon con la imagen escalada
-    ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
-
-    JLabel label = new JLabel(iconoEscalado);
-
-    return label;
-}
 
     private void nextSystembtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextSystembtnActionPerformed
-
         String sistem = (String) jComboBox1.getSelectedItem();
         sistemas.add(sistem);
         inmgs.add(imgRoute);
         descs.add(descTXt.getText());
         imgRoute = "";
         descTXt.setText(" ");
-        listarConfig();
 
 
     }//GEN-LAST:event_nextSystembtnActionPerformed
@@ -417,11 +291,8 @@ public JLabel seeImage(String route, int width, int height) {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextSystembtn;
     private javax.swing.JButton saveSisbtn;
-    private javax.swing.JTable tableData;
     // End of variables declaration//GEN-END:variables
 }

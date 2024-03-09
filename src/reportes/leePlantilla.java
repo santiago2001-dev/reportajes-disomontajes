@@ -35,7 +35,6 @@ import vistas.home;
 import java.util.prefs.Preferences;
 import vistas.perforacion.Menu;
 import vistas.perforacion.Portada;
-import vistas.perforacion.configuracionSistemas;
 
 import vistas.perforacion.formularioPerforacion;
 import vistas.perforacion.infoPerforacion;
@@ -62,20 +61,19 @@ public class leePlantilla {
         return instancia;
     }
 
-    public void llenadoTabla() {
-
-        Preferences prefs = Preferences.userNodeForPackage(configuracionSistemas.class);
-        String sistemasPrefs = prefs.get("sistemas", "");
-        String imgsPrefs = prefs.get("imgs", "");
-        String descsPerfs = prefs.get("descs", "");
-
-  
-            dataTable.addAll(getArraylistPerfs(sistemasPrefs));
-            imagePaths.addAll(getArraylistPerfs(imgsPrefs));
-            descs.addAll(getArraylistPerfs(descsPerfs));
+    public void llenadoTabla(ArrayList<String> data, ArrayList<String> images, ArrayList<String> desc) {
+        if (dataTable != null && imagePaths != null && descs != null) {
+            dataTable.addAll(data);
+            imagePaths.addAll(images);
+            descs.addAll(desc);
 
             String response = leeDoc();
             JOptionPane.showMessageDialog(null, response);
+            
+
+        } else {
+            System.out.println("Alguno de los parámetros es null");
+        }
 
     }
 
@@ -193,7 +191,7 @@ public class leePlantilla {
 
                 } catch (IOException e) {
                     Message = " Error al generar documento";
-
+                    
                 }
                 break;
 
@@ -385,21 +383,6 @@ public class leePlantilla {
         }
 
         return cadenaAleatoria.toString();
-    }
-
-    public ArrayList<String> getArraylistPerfs(String perfs) {
-
-        ArrayList<String> dataFromPerfs = new ArrayList<>();
-        if (!perfs.isEmpty()) {
-            String[] elemets = perfs.substring(1, perfs.length() - 1).split(", ");
-            for (String element : elemets) {
-                dataFromPerfs.add(element);
-
-            }
-        }
-
-        return dataFromPerfs;
-
     }
 
 }

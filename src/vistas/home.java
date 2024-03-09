@@ -8,9 +8,6 @@ package vistas;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.prefs.BackingStoreException;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,7 +16,6 @@ import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import reportes.conexion;
 import vistas.perforacion.Menu;
-import vistas.perforacion.configuracionSistemas;
 
 /**
  *
@@ -30,12 +26,6 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
         this.setLocationRelativeTo(null);
-           Preferences prefs = Preferences.userNodeForPackage(configuracionSistemas.class);
-        try {
-            prefs.clear();
-        } catch (BackingStoreException ex) {
-            Logger.getLogger(configuracionSistemas.class.getName()).log(Level.SEVERE, null, ex);
-        }
         Menu m = new Menu();
         m.setVisible(false);
 
