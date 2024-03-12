@@ -5,10 +5,25 @@
  */
 package vistas.perforacion;
 
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.prefs.Preferences;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import models.modelEvidencias;
 import reportes.leePlantilla;
 
 /**
@@ -27,6 +42,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
     }
 
     String imgUno, imgDos, imgTres, imgCuatro;
+    ArrayList<modelEvidencias> dataOne = new ArrayList<>();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,6 +53,8 @@ public class cargarEvidencias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnImg2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -57,6 +75,22 @@ public class cargarEvidencias extends javax.swing.JFrame {
         descImgTres = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableConfig = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -121,7 +155,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 60, 40));
         jPanel1.add(descImgUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 180, 50));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -161,15 +195,52 @@ public class cargarEvidencias extends javax.swing.JFrame {
         jButton1.setText("Volver");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
+        tableConfig = new javax.swing.JTable(){
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        tableConfig.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableConfig.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableConfigMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableConfig);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 480, 430));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.jpg"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 60, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1167, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,34 +268,140 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private void getDatos() {
         Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
 
-        String descripcionimagenuno = prefs.get("descripcionimagenuno", " ");
-        String descripcionimagedos = prefs.get("descripcionimagedos", " ");
-        String descripcionimagentres = prefs.get("descripcionimagentres", " ");
-        String descripcionimagencuatro = prefs.get("descripcionimagencuatro", " ");
-        imgUno = prefs.get("imgUno", " ");
-        imgDos = prefs.get("imgdos", " ");
-        imgTres = prefs.get("imgTres", " ");
-        imgCuatro = prefs.get("imgCuatro", " ");
+        String descripcionimagenuno = prefs.get("descripcionimagenuno", null);
+        String descripcionimagedos = prefs.get("descripcionimagendos", null);
+        String descripcionimagentres = prefs.get("descripcionimagentres", null);
+        String descripcionimagencuatro = prefs.get("descripcionimagencuatro", null);
 
-        descImgUno.setText(descripcionimagenuno);
-        descImgDos.setText(descripcionimagedos);
-        descImgTres.setText(descripcionimagentres);
-        descImgCuatro.setText(descripcionimagencuatro);
+        imgUno = prefs.get("imgUno", null);
+        imgDos = prefs.get("imgDos", null);
+        imgTres = prefs.get("imgTres", null);
+        imgCuatro = prefs.get("imgCuatro", null);
+
+        if (descripcionimagenuno != null) {
+            dataOne.add(new modelEvidencias(descripcionimagenuno, imgUno));
+        } else {
+            System.out.println("descripcionimagenuno vacío");
+        }
+
+        if (descripcionimagedos != null) {
+            dataOne.add(new modelEvidencias(descripcionimagedos, imgDos));
+        } else {
+            System.out.println("descripcionimagedos vacío");
+        }
+
+        if (descripcionimagentres != null) {
+            dataOne.add(new modelEvidencias(descripcionimagentres, imgTres));
+        } else {
+            System.out.println("descripcionimagentres vacío");
+        }
+
+        if (descripcionimagencuatro != null) {
+            dataOne.add(new modelEvidencias(descripcionimagencuatro, imgCuatro));
+        } else {
+            System.out.println("descripcionimagencuatro vacío");
+        }
+
+        try {
+            seeDataInTable(dataOne);
+        } catch (Exception e) {
+            System.out.println("data null");
+        }
+    }
+
+    private void seeDataInTable(ArrayList<modelEvidencias> dataOne) {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Descripcion");
+        tableModel.addColumn("imagen");
+        tableModel.addColumn("eliminar");
+        tableModel.addColumn("accion");
+        Object Datos[] = new Object[4];
+
+        for (modelEvidencias data : dataOne) {
+            System.out.println(data);
+            Datos[0] = data.getDesc();
+
+            try {
+                ImageIcon miIcon = new ImageIcon(data.getImgRoute());
+                ImageIcon img = new ImageIcon(miIcon.getImage().getScaledInstance(90, 90, 0));
+                Datos[1] = img;
+
+                JButton botonDelete = new JButton("Eliminar");
+                botonDelete.setPreferredSize(new Dimension(30, 30));
+                botonDelete.setVisible(true);
+
+                JButton botonAction = new JButton("Subir");
+                botonAction.setPreferredSize(new Dimension(100, 45));
+                botonAction.setVisible(true);
+
+                Datos[2] = botonDelete;
+                Datos[3] = botonAction;
+
+// ...
+                tableConfig.repaint();
+
+            } catch (Exception e) {
+                Datos[1] = new JLabel("No image");
+            }
+
+            tableModel.addRow(Datos);
+        }
+
+        tableConfig.setModel(tableModel);
+
+        // Configurar el renderizador para la columna de imagen
+        tableConfig.getColumnModel().getColumn(1).setCellRenderer(new ImageRenderer());
+
+        // Configurar el renderizador para la columna de botón
+        tableConfig.getColumnModel().getColumn(2).setCellRenderer(new RenderTabla());
+        tableConfig.getColumnModel().getColumn(3).setCellRenderer(new RenderTabla());
+
+        tableConfig.setRowHeight(60);
+        tableConfig.getColumnModel().getColumn(0).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(1).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(2).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(3).setPreferredWidth(60);
+    }
+
+    public class RenderTabla extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+            if (o instanceof JButton) {
+                JButton boton = (JButton) o;
+                return boton;
+            }
+            return super.getTableCellRendererComponent(jtable, o, bln, bln1, i, i1);
+        }
 
     }
+
+    // Custom renderer for the image column
+    private class ImageRenderer extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            if (value instanceof ImageIcon) {
+                // If the value is an ImageIcon, set it as the icon for the JLabel
+                setIcon((ImageIcon) value);
+            } else {
+                // If the value is not an ImageIcon, set a default "No image" label
+                setIcon(null);
+                setText("No image");
+            }
+
+            setHorizontalAlignment(JLabel.CENTER);
+
+            return this;
+        }
+    }
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
-
-        prefs.put("descripcionimagenuno", descImgUno.getText());
-        prefs.put("descripcionimagedos", descImgDos.getText());
-        prefs.put("descripcionimagentres", descImgTres.getText());
-        prefs.put("descripcionimagencuatro", descImgCuatro.getText());
-
-        prefs.put("imgUno", imgUno);
-        prefs.put("imgDos", imgDos);
-        prefs.put("imgTres", imgTres);
-        prefs.put("imgCuatro", imgCuatro);
+        putData("descripcionimagenuno", "imgUno", 0);
+        putData("descripcionimagedos", "imgdos", 1);
+        putData("descripcionimagentres", "imgTres", 2);
+        putData("descripcionimagencuatro", "imgCuatro", 3);
 
         JOptionPane.showMessageDialog(null, "Datos Guardados");
 
@@ -235,6 +412,51 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private void descImgCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descImgCuatroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_descImgCuatroActionPerformed
+
+    private void tableConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConfigMouseClicked
+        deleteRegistro();
+    }//GEN-LAST:event_tableConfigMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+
+        if (!descImgUno.getText().isEmpty()) {
+            dataOne.add(new modelEvidencias(descImgUno.getText(), imgUno));
+        }
+        if (!descImgDos.getText().isEmpty()) {
+            dataOne.add(new modelEvidencias(descImgDos.getText(), imgDos));
+
+        }
+        if (!descImgTres.getText().isEmpty()) {
+            dataOne.add(new modelEvidencias(descImgTres.getText(), imgTres));
+        }
+        if (!descImgCuatro.getText().isEmpty()) {
+            dataOne.add(new modelEvidencias(descImgCuatro.getText(), imgCuatro));
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingresa al menos una descripción.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Salir del método si no hay descripciones válidas
+        }
+
+        try {
+            seeDataInTable(dataOne);
+        } catch (Exception e) {
+            System.out.println("data null");
+        }
+
+        JOptionPane.showMessageDialog(null, "Datos Guardados");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void putData(String desc, String Img, int poscion) {
+        Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
+
+        for (int i = 0; i < dataOne.size(); i++) {
+            System.out.println(dataOne.get(i));
+            modelEvidencias data = dataOne.get(poscion);
+
+            prefs.put(desc, data.getDesc());
+            prefs.put(Img, data.getImgRoute());
+        }
+    }
 
     private String getPathFile() {
         String ruta = "";
@@ -249,6 +471,36 @@ public class cargarEvidencias extends javax.swing.JFrame {
         }
 
         return ruta;
+    }
+
+    private int auto = 0;
+
+    public void deleteRegistro() {
+        tableConfig.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = tableConfig.rowAtPoint(e.getPoint());
+                int col = tableConfig.columnAtPoint(e.getPoint());
+
+                switch (col) {
+                    case 2:
+                        dataOne.remove(row);
+
+                        seeDataInTable(dataOne);
+                        break;
+                    case 3:
+                        int size = dataOne.size();
+                        if (size > 1) {
+                            auto = (auto + 1) % size; // Reiniciar auto si supera el tamaño
+                            Collections.swap(dataOne, auto - 1, auto);
+                            seeDataInTable(dataOne);
+                        }
+                        break;
+                }
+
+                System.out.println("Se hizo clic en la celda en la fila " + row + " y la columna " + col);
+            }
+        });
     }
 
     /**
@@ -296,6 +548,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private javax.swing.JTextField descImgTres;
     private javax.swing.JTextField descImgUno;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -307,5 +560,9 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableConfig;
     // End of variables declaration//GEN-END:variables
 }

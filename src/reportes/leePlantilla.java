@@ -35,6 +35,7 @@ import vistas.home;
 import java.util.prefs.Preferences;
 import vistas.perforacion.Menu;
 import vistas.perforacion.Portada;
+import vistas.perforacion.configuracionSistemas;
 
 import vistas.perforacion.formularioPerforacion;
 import vistas.perforacion.infoPerforacion;
@@ -61,20 +62,26 @@ public class leePlantilla {
         return instancia;
     }
 
-    public void llenadoTabla(ArrayList<String> data, ArrayList<String> images, ArrayList<String> desc) {
-        if (dataTable != null && imagePaths != null && descs != null) {
-            dataTable.addAll(data);
-            imagePaths.addAll(images);
-            descs.addAll(desc);
+    public void llenadoTabla() {
+        Preferences preferencias = Preferences.userNodeForPackage(configuracionSistemas.class);
 
-            String response = leeDoc();
-            JOptionPane.showMessageDialog(null, response);
-            
+        dataTable.addAll(capturarListaDePref(preferencias.get("sistemas", "")));
+        imagePaths.addAll(capturarListaDePref(preferencias.get("imgs", "")));
+        descs.addAll(capturarListaDePref(preferencias.get("descs", "")));
 
-        } else {
-            System.out.println("Alguno de los parámetros es null");
+        String response = leeDoc();
+        JOptionPane.showMessageDialog(null, response);
+
+    }
+
+    public static ArrayList<String> capturarListaDePref(String lista) {
+        String[] data = lista.split(",");
+        ArrayList<String> dataList = new ArrayList<>();
+        for(String elemento: data){
+            dataList.add(elemento.trim());
+            System.out.println(elemento);
         }
-
+        return dataList;
     }
 
     public String leeDoc() {
@@ -191,7 +198,7 @@ public class leePlantilla {
 
                 } catch (IOException e) {
                     Message = " Error al generar documento";
-                    
+
                 }
                 break;
 

@@ -90,7 +90,7 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
 
         jLabel204.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel204.setText("-INSPECCIÓN VISUAL PARA SELECCIÓN DE EQUIPOS Y HERRAMIENTAS");
-        jPanel13.add(jLabel204, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
+        jPanel13.add(jLabel204, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
         jLabel207.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel207.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -171,7 +171,7 @@ public class tipoInsepeccionTwo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 711, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

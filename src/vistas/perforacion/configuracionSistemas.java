@@ -5,18 +5,31 @@
  */
 package vistas.perforacion;
 
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.prefs.Preferences;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import models.listTypeUsers;
 import models.typeUsers;
 import reportes.conexion;
 import reportes.leePlantilla;
+import javax.swing.JButton;
 
 /**
  *
@@ -31,8 +44,10 @@ public class configuracionSistemas extends javax.swing.JFrame {
 
     public configuracionSistemas() {
         initComponents();
+        getData();
         this.setLocationRelativeTo(null);
         getSistemas(jComboBox1);
+
     }
 
     /**
@@ -44,28 +59,35 @@ public class configuracionSistemas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        addImagebtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descTXt = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        addImagebtn = new javax.swing.JButton();
         nextSystembtn = new javax.swing.JButton();
         saveSisbtn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableData = new javax.swing.JTable();
+        tableConfig = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CONFIFURACIÓN DEL SISTEMA");
 
         jLabel2.setText("DESCRIPCIÓN");
+
+        descTXt.setColumns(20);
+        descTXt.setRows(5);
+        jScrollPane1.setViewportView(descTXt);
+
+        jLabel3.setText("Seleccional el sistema");
 
         addImagebtn.setText("CARGA EVIDENCIA");
         addImagebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -74,128 +96,139 @@ public class configuracionSistemas extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Seleccional el sistema");
-
-        descTXt.setColumns(20);
-        descTXt.setRows(5);
-        jScrollPane1.setViewportView(descTXt);
-
-        nextSystembtn.setText("AGREGAR OTRO SISTEMA");
+        nextSystembtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.jpg"))); // NOI18N
         nextSystembtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextSystembtnActionPerformed(evt);
             }
         });
 
-        saveSisbtn.setText("GUARDAR TABLA");
+        saveSisbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/savedisk_floppydisk_guardar_1543.png"))); // NOI18N
         saveSisbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveSisbtnActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Volver");
+        tableConfig = new javax.swing.JTable(){
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        tableConfig.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableConfig.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableConfigMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableConfig);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(136, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(86, 86, 86))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3))
+                                        .addGap(10, 10, 10)))
+                                .addGap(51, 51, 51))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(addImagebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(74, 74, 74))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(saveSisbtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(125, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(saveSisbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(nextSystembtn)
-                .addGap(41, 41, 41))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addImagebtn)
-                .addGap(187, 187, 187))
+                        .addComponent(nextSystembtn)
+                        .addGap(65, 65, 65)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(11, 11, 11)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addImagebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveSisbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nextSystembtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(addImagebtn)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(saveSisbtn)
+                    .addComponent(nextSystembtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveSisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSisbtnActionPerformed
-           
-        String sistem = (String) jComboBox1.getSelectedItem();
-        sistemas.add(sistem);
-        inmgs.add(imgRoute);
-        descs.add(descTXt.getText());
-   
-        
-        leePlantilla l = leePlantilla.obtenerInstancia();
 
-        l.llenadoTabla(sistemas, inmgs, descs);
+        Preferences preferencias = Preferences.userNodeForPackage(configuracionSistemas.class);
+
+        String SistemasString = String.join(",", sistemas);
+        String imgsString = String.join(",", inmgs);
+        String descString = String.join(",", descs);
+
+        preferencias.put("sistemas", SistemasString);
+        preferencias.put("imgs", imgsString);
+        preferencias.put("descs", descString);
+
         this.setVisible(false);
-        
-        // l.llamadoDatos();
+
+
     }//GEN-LAST:event_saveSisbtnActionPerformed
 
     private void nextSystembtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextSystembtnActionPerformed
         String sistem = (String) jComboBox1.getSelectedItem();
-        sistemas.add(sistem);
-        inmgs.add(imgRoute);
-        descs.add(descTXt.getText());
-        imgRoute = "";
-        descTXt.setText(" ");
+        if (sistem.isEmpty() || imgRoute.isEmpty() || descTXt.getText().isBlank()) {
+            System.out.println("no puede cargar");
+
+        } else {
+            sistemas.add(sistem);
+            inmgs.add(imgRoute);
+            descs.add(descTXt.getText());
+            imgRoute = "";
+            descTXt.setText(" ");
+            seeDataInTable();
+        }
 
 
     }//GEN-LAST:event_nextSystembtnActionPerformed
@@ -203,6 +236,11 @@ public class configuracionSistemas extends javax.swing.JFrame {
     private void addImagebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addImagebtnActionPerformed
         imgRoute = getPathFile();
     }//GEN-LAST:event_addImagebtnActionPerformed
+
+    private void tableConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConfigMouseClicked
+
+        deleteRegistro();
+    }//GEN-LAST:event_tableConfigMouseClicked
 
     /**
      * @param args the command line arguments
@@ -282,17 +320,145 @@ public class configuracionSistemas extends javax.swing.JFrame {
 
     }
 
+    private void getData() {
+        System.out.println("hola");
+
+        leePlantilla l = leePlantilla.obtenerInstancia();
+        Preferences preferencias = Preferences.userNodeForPackage(configuracionSistemas.class);
+        try {
+            sistemas.addAll(l.capturarListaDePref(preferencias.get("sistemas", "")));
+            inmgs.addAll(l.capturarListaDePref(preferencias.get("imgs", "")));
+            descs.addAll(l.capturarListaDePref(preferencias.get("descs", "")));
+            seeDataInTable();
+
+        } catch (Exception e) {
+            System.out.println("error a l taer preferencia");
+        }
+
+    }
+
+    private void seeDataInTable() {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Sistema");
+        tableModel.addColumn("Descripcion");
+        tableModel.addColumn("imagen");
+        tableModel.addColumn("Boton");
+
+        Object Datos[] = new Object[4];
+
+        for (int i = 0; i < sistemas.size(); i++) {
+            Datos[0] = sistemas.get(i);
+            Datos[1] = descs.get(i);
+
+            try {
+                // Convertir la ruta de la imagen a un objeto File
+                ImageIcon miIcon = new ImageIcon(inmgs.get(i));
+                ImageIcon img = new ImageIcon(miIcon.getImage().getScaledInstance(90, 90, 0));
+                Datos[2] = img;
+
+                JButton boton = new JButton("Eliminar");
+                boton.setSize(100, 45);
+                boton.setVisible(true);
+                ActionListener listener = new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("hello");
+                    }
+                };
+                boton.addActionListener(listener);
+
+                Datos[3] = boton;
+
+            } catch (Exception e) {
+                Datos[2] = new JLabel("No image");
+            }
+
+            tableModel.addRow(Datos);
+        }
+
+        tableConfig.setModel(tableModel);
+
+        // Configurar el renderizador para la columna de imagen
+        tableConfig.getColumnModel().getColumn(2).setCellRenderer(new ImageRenderer());
+
+        // Configurar el renderizador para la columna de botón
+        tableConfig.getColumnModel().getColumn(3).setCellRenderer(new RenderTabla());
+
+        tableConfig.setRowHeight(60);
+        tableConfig.getColumnModel().getColumn(0).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(1).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(2).setPreferredWidth(60);
+        tableConfig.getColumnModel().getColumn(3).setPreferredWidth(60);
+    }
+
+    public void deleteRegistro() {
+
+        tableConfig.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = tableConfig.rowAtPoint(e.getPoint());
+                int col = tableConfig.columnAtPoint(e.getPoint());
+                if (col == 3) {
+                    sistemas.remove(row);
+                    inmgs.remove(row);
+                    descs.remove(row);
+                    seeDataInTable();
+
+                }
+
+                System.out.println("Se hizo clic en la celda en la fila " + row + " y la columna " + col);
+
+            }
+        });
+
+    }
+
+    public class RenderTabla extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+            if (o instanceof JButton) {
+                JButton boton = (JButton) o;
+                return boton;
+            }
+            return super.getTableCellRendererComponent(jtable, o, bln, bln1, i, i1);
+        }
+
+    }
+
+    // Custom renderer for the image column
+    private class ImageRenderer extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            if (value instanceof ImageIcon) {
+                // If the value is an ImageIcon, set it as the icon for the JLabel
+                setIcon((ImageIcon) value);
+            } else {
+                // If the value is not an ImageIcon, set a default "No image" label
+                setIcon(null);
+                setText("No image");
+            }
+
+            // Configure other properties like alignment, border, etc.
+            setHorizontalAlignment(JLabel.CENTER);
+
+            return this;
+        }
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addImagebtn;
     private javax.swing.JTextArea descTXt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextSystembtn;
     private javax.swing.JButton saveSisbtn;
+    private javax.swing.JTable tableConfig;
     // End of variables declaration//GEN-END:variables
 }

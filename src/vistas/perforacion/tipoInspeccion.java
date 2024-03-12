@@ -362,6 +362,8 @@ public class tipoInspeccion extends javax.swing.JFrame {
         wk2 = (Wk2txt.isSelected()) ? 1 : 0;
         wk3 = (Wk3txt1.isSelected()) ? 1 : 0;
         wk4 = (Wk4txt.isSelected()) ? 1 : 0;
+        //agregar de mas select 
+        
 
         prefs.putInt("perf1", perf1);
         prefs.putInt("perf2", perf2);

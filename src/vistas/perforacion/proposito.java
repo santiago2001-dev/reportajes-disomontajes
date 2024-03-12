@@ -7,6 +7,7 @@ package vistas.perforacion;
 
 import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
+import reportes.leePlantilla;
 
 /**
  *
@@ -130,15 +131,13 @@ public class proposito extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private void getDatos(){
+private void getDatos() {
 
-  Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
-  String texto = prefs.get("texto", " ");
-  tablatexto.setText(texto);
+        Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
+        String texto = prefs.get("texto", " ");
+        tablatexto.setText(texto);
 
-
-
-}
+    }
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -146,6 +145,9 @@ private void getDatos(){
         Preferences prefs = Preferences.userNodeForPackage(proposito.class);
         prefs.put("texto", tablatexto.getText());
         JOptionPane.showMessageDialog(null, "Datos Guardados");
+
+        leePlantilla l = leePlantilla.obtenerInstancia().obtenerInstancia();
+        l.llenadoTabla();
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
