@@ -4,6 +4,9 @@
  */
 package vistas.perforacion;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 
@@ -43,7 +46,7 @@ public class Portada extends javax.swing.JFrame {
         CompaSer = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        fechadoc = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -118,7 +121,7 @@ public class Portada extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(TextoT, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(fechadoc, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -139,7 +142,7 @@ public class Portada extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fechadoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(99, 99, 99)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -174,15 +177,22 @@ public class Portada extends javax.swing.JFrame {
     }//GEN-LAST:event_CompaSerActionPerformed
     private void getDatos() {
         Preferences prefs = Preferences.userNodeForPackage(Portada.class);
-        String Titulo = prefs.get("perfinternacional", " ");
+        String Titulo = prefs.get("Titulo", " ");
         String Compañiacontratante = prefs.get("Compañiacontratante", " ");
         String comapañiaservicio = prefs.get("comapañiaservicio", " ");
         String fechaDoc = prefs.get("fechaDoc", " ");
-
+         if (fechaDoc != null) {
+            try {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date fechaGuardada = dateFormat.parse(fechaDoc);
+                fechadoc.setDate(fechaGuardada);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         TextoT.setText(Titulo);
         CompaCon.setText(Compañiacontratante);
         CompaSer.setText(comapañiaservicio);
-       // dateTxt.set(fechaDoc);
 
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -191,7 +201,16 @@ public class Portada extends javax.swing.JFrame {
         prefs.put("Titulo", TextoT.getText());
         prefs.put("Compañiacontratante", CompaCon.getText());
         prefs.put("comapañiaservicio", CompaSer.getText());
-       // prefs.put("fechaDoc", dateTxt.getText());
+        Date selectedDate = fechadoc.getDate();
+
+        if (selectedDate != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedDate = dateFormat.format(selectedDate);
+
+            prefs.put("fechaDoc", formattedDate);
+        } else {
+            System.out.println("La fecha seleccionada es nula.");
+        }
         JOptionPane.showMessageDialog(null, "Datos Guardados");
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -235,9 +254,9 @@ public class Portada extends javax.swing.JFrame {
     private javax.swing.JTextField CompaCon;
     private javax.swing.JTextField CompaSer;
     private javax.swing.JTextField TextoT;
+    private com.toedter.calendar.JDateChooser fechadoc;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JCalendar jCalendar1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
