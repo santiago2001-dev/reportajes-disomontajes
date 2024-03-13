@@ -52,24 +52,24 @@ public class tipoInspeccion extends javax.swing.JFrame {
         Perf1txt = new javax.swing.JCheckBox();
         Wk1txt = new javax.swing.JCheckBox();
         Perf3txt = new javax.swing.JCheckBox();
-        Wk3txt1 = new javax.swing.JCheckBox();
+        Wk3txt = new javax.swing.JCheckBox();
         jLabel35 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        Perf4txt1 = new javax.swing.JCheckBox();
-        Perf4txt2 = new javax.swing.JCheckBox();
-        Wk4txt1 = new javax.swing.JCheckBox();
-        Perf2txt1 = new javax.swing.JCheckBox();
-        Perf2txt2 = new javax.swing.JCheckBox();
-        Perf2txt3 = new javax.swing.JCheckBox();
-        Perf2txt4 = new javax.swing.JCheckBox();
+        ivpseh1txt = new javax.swing.JCheckBox();
+        icfr1txt = new javax.swing.JCheckBox();
+        icfr2txt = new javax.swing.JCheckBox();
+        erial3txt = new javax.swing.JCheckBox();
+        erial1txt = new javax.swing.JCheckBox();
+        ivseh3txt = new javax.swing.JCheckBox();
+        icfr3txt = new javax.swing.JCheckBox();
         jLabel23 = new javax.swing.JLabel();
-        Wk1txt1 = new javax.swing.JCheckBox();
-        Wk1txt2 = new javax.swing.JCheckBox();
-        Wk1txt3 = new javax.swing.JCheckBox();
-        Wk1txt4 = new javax.swing.JCheckBox();
-        Wk1txt5 = new javax.swing.JCheckBox();
+        erial4txt = new javax.swing.JCheckBox();
+        ivseh2txt = new javax.swing.JCheckBox();
+        erial2txt = new javax.swing.JCheckBox();
+        ivseh4txt = new javax.swing.JCheckBox();
+        icfr4txt = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,22 +133,22 @@ public class tipoInspeccion extends javax.swing.JFrame {
                 Wk4txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
+        jPanel2.add(Wk4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, -1, -1));
 
         Perf2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Perf2txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Perf2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, -1, -1));
-        jPanel2.add(Perf4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, -1, -1));
+        jPanel2.add(Perf2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, -1, -1));
+        jPanel2.add(Perf4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, -1, -1));
 
         Wk2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Wk2txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
+        jPanel2.add(Wk2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, -1, -1));
 
         Perf1txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +162,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
                 Wk1txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, -1, -1));
+        jPanel2.add(Wk1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, -1, -1));
 
         Perf3txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,12 +171,12 @@ public class tipoInspeccion extends javax.swing.JFrame {
         });
         jPanel2.add(Perf3txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, -1, -1));
 
-        Wk3txt1.addActionListener(new java.awt.event.ActionListener() {
+        Wk3txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk3txt1ActionPerformed(evt);
+                Wk3txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk3txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
+        jPanel2.add(Wk3txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -197,83 +197,83 @@ public class tipoInspeccion extends javax.swing.JFrame {
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("-INSPECCION DE CUMPLIMIENTO, FUNCIONALIDAD Y RECIBO");
         jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 32));
-        jPanel2.add(Perf4txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
-        jPanel2.add(Perf4txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
+        jPanel2.add(ivpseh1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
+        jPanel2.add(icfr1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
 
-        Wk4txt1.addActionListener(new java.awt.event.ActionListener() {
+        icfr2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk4txt1ActionPerformed(evt);
+                icfr2txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk4txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, -1));
+        jPanel2.add(icfr2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, -1));
 
-        Perf2txt1.addActionListener(new java.awt.event.ActionListener() {
+        erial3txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Perf2txt1ActionPerformed(evt);
+                erial3txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Perf2txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, -1, -1));
+        jPanel2.add(erial3txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, -1, -1));
 
-        Perf2txt2.addActionListener(new java.awt.event.ActionListener() {
+        erial1txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Perf2txt2ActionPerformed(evt);
+                erial1txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Perf2txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, -1, -1));
+        jPanel2.add(erial1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, -1, -1));
 
-        Perf2txt3.addActionListener(new java.awt.event.ActionListener() {
+        ivseh3txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Perf2txt3ActionPerformed(evt);
+                ivseh3txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Perf2txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
+        jPanel2.add(ivseh3txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
 
-        Perf2txt4.addActionListener(new java.awt.event.ActionListener() {
+        icfr3txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Perf2txt4ActionPerformed(evt);
+                icfr3txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Perf2txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, -1, -1));
+        jPanel2.add(icfr3txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("WK");
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 20, 31));
 
-        Wk1txt1.addActionListener(new java.awt.event.ActionListener() {
+        erial4txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk1txt1ActionPerformed(evt);
+                erial4txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, -1, -1));
+        jPanel2.add(erial4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, -1, -1));
 
-        Wk1txt2.addActionListener(new java.awt.event.ActionListener() {
+        ivseh2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk1txt2ActionPerformed(evt);
+                ivseh2txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, -1, -1));
+        jPanel2.add(ivseh2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
 
-        Wk1txt3.addActionListener(new java.awt.event.ActionListener() {
+        erial2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk1txt3ActionPerformed(evt);
+                erial2txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, -1, -1));
+        jPanel2.add(erial2txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
-        Wk1txt4.addActionListener(new java.awt.event.ActionListener() {
+        ivseh4txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk1txt4ActionPerformed(evt);
+                ivseh4txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, -1));
+        jPanel2.add(ivseh4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, -1));
 
-        Wk1txt5.addActionListener(new java.awt.event.ActionListener() {
+        icfr4txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Wk1txt5ActionPerformed(evt);
+                icfr4txtActionPerformed(evt);
             }
         });
-        jPanel2.add(Wk1txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
+        jPanel2.add(icfr4txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
 
         jButton1.setText("volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -336,8 +336,20 @@ public class tipoInspeccion extends javax.swing.JFrame {
         selectedCheck(Perf4txt, prefs.getInt("perf4", 0));
         selectedCheck(Wk1txt, prefs.getInt("wk1", 0));
         selectedCheck(Wk2txt, prefs.getInt("wk2", 0));
-        selectedCheck(Wk3txt1, prefs.getInt("wk3", 0));
+        selectedCheck(Wk3txt, prefs.getInt("wk3", 0));
         selectedCheck(Wk4txt, prefs.getInt("wk4", 0));
+        selectedCheck(ivpseh1txt, prefs.getInt("IVSEH1",0));
+        selectedCheck(ivseh2txt, prefs.getInt("IVSEH2",0));
+        selectedCheck(ivseh3txt, prefs.getInt("IVSEH3",0));
+        selectedCheck(ivseh4txt, prefs.getInt("IVSEH4",0));
+        selectedCheck(icfr1txt, prefs.getInt("ICFR1",0));
+        selectedCheck(icfr2txt, prefs.getInt("ICFR2",0));
+        selectedCheck(icfr3txt, prefs.getInt("ICFR3",0));
+        selectedCheck(icfr4txt, prefs.getInt("ICFR4",0));
+        selectedCheck(erial1txt, prefs.getInt("ERIAI1",0));
+        selectedCheck(erial2txt, prefs.getInt("ERIAI2",0));
+        selectedCheck(erial3txt, prefs.getInt("ERIAI3",0));
+        selectedCheck(erial4txt, prefs.getInt("ERIAI4",0));
 
     }
 
@@ -352,7 +364,7 @@ public class tipoInspeccion extends javax.swing.JFrame {
     private void nextbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextbtnActionPerformed
         Preferences prefs = Preferences.userNodeForPackage(tipoInspeccion.class);
 
-        int perf1, perf2, perf3, perf4, wk1, wk2, wk3, wk4;
+        int perf1, perf2, perf3, perf4, wk1, wk2, wk3, wk4, ivpseh1, ivseh2, ivseh3, ivseh4, icfr1, icfr2, icfr3, icfr4, erial1, erial2, erial3, erial4;
 
         perf1 = (Perf1txt.isSelected()) ? 1 : 0;
         perf2 = (Perf2txt.isSelected()) ? 1 : 0;
@@ -360,11 +372,22 @@ public class tipoInspeccion extends javax.swing.JFrame {
         perf4 = (Perf4txt.isSelected()) ? 1 : 0;
         wk1 = (Wk1txt.isSelected()) ? 1 : 0;
         wk2 = (Wk2txt.isSelected()) ? 1 : 0;
-        wk3 = (Wk3txt1.isSelected()) ? 1 : 0;
+        wk3 = (Wk3txt.isSelected()) ? 1 : 0;
         wk4 = (Wk4txt.isSelected()) ? 1 : 0;
-        //agregar de mas select 
-        
+        ivpseh1 = (ivpseh1txt.isSelected()) ? 1 : 0;
+        ivseh2 = (ivseh2txt.isSelected()) ? 1 : 0;
+        ivseh3 = (ivseh3txt.isSelected()) ? 1 : 0;
+        ivseh4 = (ivseh4txt.isSelected()) ? 1 : 0;
+        icfr1 = (icfr1txt.isSelected()) ? 1 : 0;
+        icfr2 = (icfr2txt.isSelected()) ? 1 : 0;
+        icfr3 = (icfr3txt.isSelected()) ? 1 : 0;
+        icfr4 = (icfr4txt.isSelected()) ? 1 : 0;
+        erial1 = (erial1txt.isSelected()) ? 1 : 0;
+        erial2 = (erial2txt.isSelected()) ? 1 : 0;
+        erial3 = (erial3txt.isSelected()) ? 1 : 0;
+        erial4 = (erial4txt.isSelected()) ? 1 : 0;
 
+        //agregar de mas select 
         prefs.putInt("perf1", perf1);
         prefs.putInt("perf2", perf2);
         prefs.putInt("perf3", perf3);
@@ -373,8 +396,18 @@ public class tipoInspeccion extends javax.swing.JFrame {
         prefs.putInt("wk2", wk2);
         prefs.putInt("wk3", wk3);
         prefs.putInt("wk4", wk4);
-
-
+        prefs.putInt("IVSEH1", ivpseh1);
+        prefs.putInt("IVSEH2", ivseh2);
+        prefs.putInt("IVSEH3", ivseh3);
+        prefs.putInt("IVSEH4", ivseh4);
+        prefs.putInt("ICFR1", icfr1);
+        prefs.putInt("ICFR2", icfr2);
+        prefs.putInt("ICFR3", icfr3);
+        prefs.putInt("ICFR4", icfr4);
+        prefs.putInt("ERIAI1", erial1);
+        prefs.putInt("ERIAI2", erial2);
+        prefs.putInt("ERIAI3", erial3);
+        prefs.putInt("ERIAI4", erial4);
         JOptionPane.showMessageDialog(null, "Datos Guardados");
         this.setVisible(false);
 
@@ -397,9 +430,9 @@ public class tipoInspeccion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Wk1txtActionPerformed
 
-    private void Wk3txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk3txt1ActionPerformed
+    private void Wk3txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk3txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk3txt1ActionPerformed
+    }//GEN-LAST:event_Wk3txtActionPerformed
 
     private void Perf1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf1txtActionPerformed
         System.out.println("me selecciono");
@@ -409,45 +442,45 @@ public class tipoInspeccion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Perf3txtActionPerformed
 
-    private void Wk4txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk4txt1ActionPerformed
+    private void icfr2txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icfr2txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk4txt1ActionPerformed
+    }//GEN-LAST:event_icfr2txtActionPerformed
 
-    private void Perf2txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf2txt1ActionPerformed
+    private void erial3txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erial3txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Perf2txt1ActionPerformed
+    }//GEN-LAST:event_erial3txtActionPerformed
 
-    private void Perf2txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf2txt2ActionPerformed
+    private void erial1txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erial1txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Perf2txt2ActionPerformed
+    }//GEN-LAST:event_erial1txtActionPerformed
 
-    private void Perf2txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf2txt3ActionPerformed
+    private void ivseh3txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivseh3txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Perf2txt3ActionPerformed
+    }//GEN-LAST:event_ivseh3txtActionPerformed
 
-    private void Perf2txt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perf2txt4ActionPerformed
+    private void icfr3txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icfr3txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Perf2txt4ActionPerformed
+    }//GEN-LAST:event_icfr3txtActionPerformed
 
-    private void Wk1txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk1txt1ActionPerformed
+    private void erial4txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erial4txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk1txt1ActionPerformed
+    }//GEN-LAST:event_erial4txtActionPerformed
 
-    private void Wk1txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk1txt2ActionPerformed
+    private void ivseh2txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivseh2txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk1txt2ActionPerformed
+    }//GEN-LAST:event_ivseh2txtActionPerformed
 
-    private void Wk1txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk1txt3ActionPerformed
+    private void erial2txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erial2txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk1txt3ActionPerformed
+    }//GEN-LAST:event_erial2txtActionPerformed
 
-    private void Wk1txt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk1txt4ActionPerformed
+    private void ivseh4txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivseh4txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk1txt4ActionPerformed
+    }//GEN-LAST:event_ivseh4txtActionPerformed
 
-    private void Wk1txt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wk1txt5ActionPerformed
+    private void icfr4txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icfr4txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Wk1txt5ActionPerformed
+    }//GEN-LAST:event_icfr4txtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -495,24 +528,24 @@ public class tipoInspeccion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox Perf1txt;
     private javax.swing.JCheckBox Perf2txt;
-    private javax.swing.JCheckBox Perf2txt1;
-    private javax.swing.JCheckBox Perf2txt2;
-    private javax.swing.JCheckBox Perf2txt3;
-    private javax.swing.JCheckBox Perf2txt4;
     private javax.swing.JCheckBox Perf3txt;
     private javax.swing.JCheckBox Perf4txt;
-    private javax.swing.JCheckBox Perf4txt1;
-    private javax.swing.JCheckBox Perf4txt2;
     private javax.swing.JCheckBox Wk1txt;
-    private javax.swing.JCheckBox Wk1txt1;
-    private javax.swing.JCheckBox Wk1txt2;
-    private javax.swing.JCheckBox Wk1txt3;
-    private javax.swing.JCheckBox Wk1txt4;
-    private javax.swing.JCheckBox Wk1txt5;
     private javax.swing.JCheckBox Wk2txt;
-    private javax.swing.JCheckBox Wk3txt1;
+    private javax.swing.JCheckBox Wk3txt;
     private javax.swing.JCheckBox Wk4txt;
-    private javax.swing.JCheckBox Wk4txt1;
+    private javax.swing.JCheckBox erial1txt;
+    private javax.swing.JCheckBox erial2txt;
+    private javax.swing.JCheckBox erial3txt;
+    private javax.swing.JCheckBox erial4txt;
+    private javax.swing.JCheckBox icfr1txt;
+    private javax.swing.JCheckBox icfr2txt;
+    private javax.swing.JCheckBox icfr3txt;
+    private javax.swing.JCheckBox icfr4txt;
+    private javax.swing.JCheckBox ivpseh1txt;
+    private javax.swing.JCheckBox ivseh2txt;
+    private javax.swing.JCheckBox ivseh3txt;
+    private javax.swing.JCheckBox ivseh4txt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel21;

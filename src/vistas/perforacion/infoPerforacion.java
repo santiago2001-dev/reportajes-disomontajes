@@ -5,6 +5,9 @@
  */
 package vistas.perforacion;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import reportes.leePlantilla;
@@ -31,8 +34,6 @@ public class infoPerforacion extends javax.swing.JFrame {
 
         String ubiPozo = prefs.get("ubiPozo", " ");
         String activdadEqui = prefs.get("activdadEqui", " ");
-        String fechaIni = prefs.get("fechaIni", " ");
-       // String fehaFin = prefs.get("fehaFin", " ");
         String compaIns = prefs.get("compaIns", " ");
         String nameSuper = prefs.get("nameSuper", " ");
         String celSuper = prefs.get("celSuper", " ");
@@ -40,9 +41,31 @@ public class infoPerforacion extends javax.swing.JFrame {
         String celAsis = prefs.get("celAsis", " ");
         String nameInspect = prefs.get("nameInspect", " ");
         String celInspect = prefs.get("celInspect", " ");
+        String fechaInitxt = prefs.get("fechaInitxt", " ");
+        String fechaFintxt = prefs.get("fechaFintxt", " ");
+        
+         if (fechaInitxt != null) {
+            try {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date fechaGuardada = dateFormat.parse(fechaInitxt);
+                fechainitxt.setDate(fechaGuardada);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        
+         if (fechafintxt != null) {
+            try {
+                SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy");
+                Date fechaGuardada1 = dateFormat1.parse(fechaFintxt);
+                fechafintxt.setDate(fechaGuardada1);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+         
         ubicacionPozotxt.setText(ubiPozo);
         actividadtxt.setText(activdadEqui);
-       // fechaInitxt.setText(fechaIni);
         compniaIspectxt.setText(compaIns);
         nombreSupertxt.setText(nameSuper);
         celSuperTxt.setText(celSuper);
@@ -50,7 +73,7 @@ public class infoPerforacion extends javax.swing.JFrame {
         celAsistxt.setText(celAsis);
         nameInspecttxt.setText(nameInspect);
         celInspecttxt.setText(celInspect);
-        //fechafintxt.setText(fechafin)
+     
 
     }
 
@@ -93,8 +116,8 @@ public class infoPerforacion extends javax.swing.JFrame {
         actividadtxt = new javax.swing.JTextField();
         compniaIspectxt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        fechainitxt = new com.toedter.calendar.JDateChooser();
+        fechafintxt = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,7 +136,7 @@ public class infoPerforacion extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setText("INICIO");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 40, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 40, 20));
 
         jLabel9.setText("ACTIVIDAD ACTUAL DEL EQUIPO");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, 20));
@@ -126,7 +149,7 @@ public class infoPerforacion extends javax.swing.JFrame {
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 77, 20));
 
         jLabel18.setText("FIN");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 26, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 26, 20));
 
         jLabel19.setText("COMPAÑIA INSPECTORA");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, -1, 20));
@@ -255,8 +278,8 @@ public class infoPerforacion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
-        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 320, 110, -1));
-        jPanel2.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 320, 100, -1));
+        jPanel2.add(fechainitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 320, 120, -1));
+        jPanel2.add(fechafintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -285,8 +308,6 @@ public class infoPerforacion extends javax.swing.JFrame {
 
         prefs.put("ubiPozo", ubicacionPozotxt.getText());
         prefs.put("activdadEqui", actividadtxt.getText());
-       // prefs.put("fechaIni", fechaInitxt.getText());
-       //prefs.put("fehaFin", fechafintxt.getText());
         prefs.put("compaIns", compniaIspectxt.getText());
         prefs.put("nameSuper", nombreSupertxt.getText());
         prefs.put("celSuper", celSuperTxt.getText());
@@ -294,6 +315,26 @@ public class infoPerforacion extends javax.swing.JFrame {
         prefs.put("celAsis", celAsistxt.getText());
         prefs.put("nameInspect", nameInspecttxt.getText());
         prefs.put("celInspect", celInspecttxt.getText());
+      //fecha inicial
+        Date selectedDate =fechainitxt.getDate();
+        if (selectedDate != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedDate = dateFormat.format(selectedDate);
+
+            prefs.put("fechaInitxt", formattedDate);
+        } else {
+            System.out.println("La fecha seleccionada es nula.");
+        }
+        //fecha final
+        Date selectedDate1 =fechafintxt.getDate();
+        if (selectedDate1 != null) {
+            SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedDate1 = dateFormat1.format(selectedDate1);
+
+            prefs.put("fechaFintxt", formattedDate1);
+        } else {
+            System.out.println("La fecha seleccionada es nula.");
+        }
         
         JOptionPane.showMessageDialog(null, "Datos Guardados");
         tipoInspeccion p = new tipoInspeccion();
@@ -380,9 +421,9 @@ public class infoPerforacion extends javax.swing.JFrame {
     private javax.swing.JTextField celInspecttxt;
     private javax.swing.JTextField celSuperTxt;
     private javax.swing.JTextField compniaIspectxt;
+    private com.toedter.calendar.JDateChooser fechafintxt;
+    private com.toedter.calendar.JDateChooser fechainitxt;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
