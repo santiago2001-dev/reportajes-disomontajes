@@ -271,13 +271,13 @@ public class infoPerforacion extends javax.swing.JFrame {
         });
         jPanel2.add(compniaIspectxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 170, -1));
 
-        jButton1.setText("Volver");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/return.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 60, 40));
         jPanel2.add(fechainitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 320, 120, -1));
         jPanel2.add(fechafintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 120, -1));
 

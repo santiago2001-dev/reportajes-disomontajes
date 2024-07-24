@@ -147,7 +147,8 @@ public class presenteadoA extends javax.swing.JFrame {
         });
         jPanel2.add(nombre1txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 150, -1));
 
-        jButton1.setText("Volver");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/return.png"))); // NOI18N
+        jButton1.setActionCommand("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

@@ -40,7 +40,6 @@ public class proposito extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablatexto = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,16 +80,12 @@ public class proposito extends javax.swing.JFrame {
         tablatexto.setRows(5);
         jScrollPane1.setViewportView(tablatexto);
 
-        jButton2.setText("Volver");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(56, 435, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(46, 46, 46))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -107,14 +102,11 @@ public class proposito extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(63, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(42, 42, 42)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(jButton1)))
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(jButton1)
                 .addGap(34, 34, 34))
         );
 
@@ -134,20 +126,18 @@ public class proposito extends javax.swing.JFrame {
 private void getDatos() {
 
         Preferences prefs = Preferences.userNodeForPackage(formularioPerforacion.class);
-        String texto = prefs.get("texto", " ");
+        String texto = prefs.get("propositoInspect", " ");
         tablatexto.setText(texto);
 
     }
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         Preferences prefs = Preferences.userNodeForPackage(proposito.class);
-        prefs.put("texto", tablatexto.getText());
+        prefs.put("propositoInspect", tablatexto.getText());
         JOptionPane.showMessageDialog(null, "Datos Guardados");
 
-        leePlantilla l = leePlantilla.obtenerInstancia().obtenerInstancia();
-        l.llenadoTabla();
+       
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -188,7 +178,6 @@ private void getDatos() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

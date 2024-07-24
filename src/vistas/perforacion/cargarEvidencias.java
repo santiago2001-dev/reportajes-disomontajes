@@ -24,6 +24,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import models.modelEvidencias;
+import reportes.conexion;
 import reportes.leePlantilla;
 
 /**
@@ -39,6 +40,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         getDatos();
+
     }
 
     String imgUno, imgDos, imgTres, imgCuatro;
@@ -74,7 +76,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         descImgTres = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableConfig = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
@@ -174,6 +175,12 @@ public class cargarEvidencias extends javax.swing.JFrame {
             }
         });
         jPanel1.add(descImgCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 190, 60));
+
+        descImgDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descImgDosActionPerformed(evt);
+            }
+        });
         jPanel1.add(descImgDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 180, 60));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -191,9 +198,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("DESCRIPCION");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 138, 20));
-
-        jButton1.setText("Volver");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
         tableConfig = new javax.swing.JTable(){
             public boolean isCellEditable(int row, int column){
@@ -226,7 +230,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 60, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 60, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -269,7 +273,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
         Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
 
         String descripcionimagenuno = prefs.get("descripcionimagenuno", null);
-        String descripcionimagedos = prefs.get("descripcionimagendos", null);
+        String descripcionimagedos = prefs.get("descripcionimagedos", null);
         String descripcionimagentres = prefs.get("descripcionimagentres", null);
         String descripcionimagencuatro = prefs.get("descripcionimagencuatro", null);
 
@@ -318,7 +322,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
         Object Datos[] = new Object[4];
 
         for (modelEvidencias data : dataOne) {
-            System.out.println(data);
             Datos[0] = data.getDesc();
 
             try {
@@ -337,7 +340,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
                 Datos[2] = botonDelete;
                 Datos[3] = botonAction;
 
-// ...
                 tableConfig.repaint();
 
             } catch (Exception e) {
@@ -349,10 +351,8 @@ public class cargarEvidencias extends javax.swing.JFrame {
 
         tableConfig.setModel(tableModel);
 
-        // Configurar el renderizador para la columna de imagen
         tableConfig.getColumnModel().getColumn(1).setCellRenderer(new ImageRenderer());
 
-        // Configurar el renderizador para la columna de botón
         tableConfig.getColumnModel().getColumn(2).setCellRenderer(new RenderTabla());
         tableConfig.getColumnModel().getColumn(3).setCellRenderer(new RenderTabla());
 
@@ -376,7 +376,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
 
     }
 
-    // Custom renderer for the image column
     private class ImageRenderer extends DefaultTableCellRenderer {
 
         @Override
@@ -399,7 +398,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
         putData("descripcionimagenuno", "imgUno", 0);
-        putData("descripcionimagedos", "imgdos", 1);
+        putData("descripcionimagedos", "imgDos", 1);
         putData("descripcionimagentres", "imgTres", 2);
         putData("descripcionimagencuatro", "imgCuatro", 3);
 
@@ -423,6 +422,7 @@ public class cargarEvidencias extends javax.swing.JFrame {
         if (!descImgUno.getText().isEmpty()) {
             dataOne.add(new modelEvidencias(descImgUno.getText(), imgUno));
         }
+
         if (!descImgDos.getText().isEmpty()) {
             dataOne.add(new modelEvidencias(descImgDos.getText(), imgDos));
 
@@ -432,9 +432,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
         }
         if (!descImgCuatro.getText().isEmpty()) {
             dataOne.add(new modelEvidencias(descImgCuatro.getText(), imgCuatro));
-        } else {
-            JOptionPane.showMessageDialog(null, "Ingresa al menos una descripción.", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Salir del método si no hay descripciones válidas
         }
 
         try {
@@ -446,16 +443,21 @@ public class cargarEvidencias extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Datos Guardados");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void descImgDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descImgDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_descImgDosActionPerformed
+
     private void putData(String desc, String Img, int poscion) {
         Preferences prefs = Preferences.userNodeForPackage(cargarEvidencias.class);
 
         for (int i = 0; i < dataOne.size(); i++) {
-            System.out.println(dataOne.get(i));
             modelEvidencias data = dataOne.get(poscion);
 
             prefs.put(desc, data.getDesc());
             prefs.put(Img, data.getImgRoute());
         }
+
+        System.out.println(prefs.get("descripcionimagedos", null));
     }
 
     private String getPathFile() {
@@ -487,6 +489,8 @@ public class cargarEvidencias extends javax.swing.JFrame {
                         dataOne.remove(row);
 
                         seeDataInTable(dataOne);
+                        JOptionPane.showMessageDialog(null, "registro eliminado");
+
                         break;
                     case 3:
                         int size = dataOne.size();
@@ -547,7 +551,6 @@ public class cargarEvidencias extends javax.swing.JFrame {
     private javax.swing.JTextField descImgDos;
     private javax.swing.JTextField descImgTres;
     private javax.swing.JTextField descImgUno;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

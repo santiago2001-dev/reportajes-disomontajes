@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas.perforacion;
+
 import vistas.home;
 import javax.swing.JFrame;
 
@@ -11,16 +12,19 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-   // tipoInsepeccionTwo tipoinspecciontwo = new tipoInsepeccionTwo();
-   // tipoInspeccion tipoinspeccion = new tipoInspeccion();
+    // tipoInsepeccionTwo tipoinspecciontwo = new tipoInsepeccionTwo();
+    // tipoInspeccion tipoinspeccion = new tipoInspeccion();
     //tipoInsepeccionThree tipoinspeccionthree = new tipoInsepeccionThree();
     cargarEvidencias cargarevidencias = new cargarEvidencias();
     formularioPerforacion formularioperforacion = new formularioPerforacion();
     //infoPerforacion infoperforacion = new infoPerforacion();
     configuracionSistemas configuracionsistema = new configuracionSistemas();
     Portada portada = new Portada();
-  //  presenteadoA presentado = new presenteadoA();
+    //  presenteadoA presentado = new presenteadoA();
     proposito proposito = new proposito();
+    resumenInspeccion resumenInspeccion = new resumenInspeccion();
+    hallazgosGenerales hallazgos = new hallazgosGenerales();
+    certificados certificaodos = new certificados();
 
     public Menu() {
         initComponents();
@@ -51,8 +55,12 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -60,6 +68,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
         jButton1.setText("Ir a home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,14 +81,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(898, Short.MAX_VALUE)
+                .addContainerGap(977, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(441, Short.MAX_VALUE)
+                .addContainerGap(433, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(33, 33, 33))
         );
@@ -149,11 +158,41 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu10);
 
-        jMenu6.setText("detalles relevantes");
-        jMenuBar1.add(jMenu6);
+        jMenu2.setText("resumen diario de inspeccion");
 
-        jMenu7.setText("hallazgos");
-        jMenuBar1.add(jMenu7);
+        jMenuItem2.setText("resumen");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu11.setText("Hallazgos");
+
+        jMenuItem3.setText("Vista Hallazgos");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu11);
+
+        jMenu9.setText("certificados NDT");
+
+        jMenuItem4.setText("certificados");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -180,14 +219,17 @@ public class Menu extends javax.swing.JFrame {
 
         cargarevidencias.setVisible(true);
         //tipoinspeccionthree.setVisible(false);
-       // tipoinspecciontwo.setVisible(false);
-       // tipoinspeccion.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
+        // tipoinspeccion.setVisible(false);
         formularioperforacion.setVisible(false);
-       // infoperforacion.setVisible(false);
+        // infoperforacion.setVisible(false);
         configuracionsistema.setVisible(false);
         portada.setVisible(false);
-       // presentado.setVisible(false);
+        // presentado.setVisible(false);
         proposito.setVisible(false);
+        resumenInspeccion.setVisible(false);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
 
 
     }//GEN-LAST:event_SubirActionPerformed
@@ -198,13 +240,16 @@ public class Menu extends javax.swing.JFrame {
         formularioperforacion.setVisible(true);
         cargarevidencias.setVisible(false);
         //tipoinspeccionthree.setVisible(false);
-       // tipoinspecciontwo.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
         //tipoinspeccion.setVisible(false);
         //infoperforacion.setVisible(false);
         configuracionsistema.setVisible(false);
         portada.setVisible(false);
         //presentado.setVisible(false);
         proposito.setVisible(false);
+        resumenInspeccion.setVisible(false);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
 
 
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -216,11 +261,14 @@ public class Menu extends javax.swing.JFrame {
         formularioperforacion.setVisible(false);
         cargarevidencias.setVisible(false);
         //tipoinspeccionthree.setVisible(false);
-       // tipoinspecciontwo.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
         //tipoinspeccion.setVisible(false);
         portada.setVisible(false);
         //presentado.setVisible(false);
         proposito.setVisible(false);
+        resumenInspeccion.setVisible(false);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
 
 
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -228,26 +276,31 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         //presentado.setVisible(false);
         proposito.setVisible(false);
-
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
         configuracionsistema.setVisible(false);
         //infoperforacion.setVisible(false);
         formularioperforacion.setVisible(false);
         cargarevidencias.setVisible(false);
-       // tipoinspeccionthree.setVisible(false);
+        // tipoinspeccionthree.setVisible(false);
         //tipoinspecciontwo.setVisible(false);
         //tipoinspeccion.setVisible(false);
+        resumenInspeccion.setVisible(false);
         portada.setVisible(true);    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         configuracionsistema.setVisible(false);
-       // presentado.setVisible(false);
+        // presentado.setVisible(false);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
         proposito.setVisible(true);
         //infoperforacion.setVisible(false);
         formularioperforacion.setVisible(false);
         cargarevidencias.setVisible(false);
         //tipoinspeccionthree.setVisible(false);
-       // tipoinspecciontwo.setVisible(false);
-       // tipoinspeccion.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
+        // tipoinspeccion.setVisible(false);
+        resumenInspeccion.setVisible(false);
         portada.setVisible(false);    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -255,8 +308,59 @@ public class Menu extends javax.swing.JFrame {
         home h = new home();
         h.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        configuracionsistema.setVisible(false);
+        // presentado.setVisible(false);
+        proposito.setVisible(false);
+        //infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        //tipoinspeccionthree.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
+        // tipoinspeccion.setVisible(false);
+        resumenInspeccion.setVisible(true);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(false);
+        portada.setVisible(false);
+
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+       
+          configuracionsistema.setVisible(false);
+        // presentado.setVisible(false);
+        proposito.setVisible(false);
+        //infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        //tipoinspeccionthree.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
+        // tipoinspeccion.setVisible(false);
+        resumenInspeccion.setVisible(false);
+        hallazgos.setVisible(true);
+        certificaodos.setVisible(false);
+        portada.setVisible(false);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+           configuracionsistema.setVisible(false);
+        // presentado.setVisible(false);
+        proposito.setVisible(false);
+        //infoperforacion.setVisible(false);
+        formularioperforacion.setVisible(false);
+        cargarevidencias.setVisible(false);
+        //tipoinspeccionthree.setVisible(false);
+        // tipoinspecciontwo.setVisible(false);
+        // tipoinspeccion.setVisible(false);
+        resumenInspeccion.setVisible(false);
+        hallazgos.setVisible(false);
+        certificaodos.setVisible(true);
+        portada.setVisible(false);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,14 +402,18 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;

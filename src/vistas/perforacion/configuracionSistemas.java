@@ -30,6 +30,7 @@ import models.typeUsers;
 import reportes.conexion;
 import reportes.leePlantilla;
 import javax.swing.JButton;
+import models.modelEvidencias;
 
 /**
  *
@@ -321,14 +322,33 @@ public class configuracionSistemas extends javax.swing.JFrame {
     }
 
     private void getData() {
-        System.out.println("hola");
 
         leePlantilla l = leePlantilla.obtenerInstancia();
         Preferences preferencias = Preferences.userNodeForPackage(configuracionSistemas.class);
         try {
-            sistemas.addAll(l.capturarListaDePref(preferencias.get("sistemas", "")));
-            inmgs.addAll(l.capturarListaDePref(preferencias.get("imgs", "")));
-            descs.addAll(l.capturarListaDePref(preferencias.get("descs", "")));
+
+            String sistemasStr = preferencias.get("sistemas", null),
+                    imgsStr = preferencias.get("imgs", null),
+                    descStr = preferencias.get("descs", null);
+
+            if (sistemasStr != null) {
+                sistemas.addAll(l.capturarListaDePref(sistemasStr));
+            } else {
+                System.out.println("descripcionimagenuno vacío");
+            }
+
+            if (imgsStr != null) {
+                inmgs.addAll(l.capturarListaDePref(imgsStr));
+            } else {
+                System.out.println("descripcionimagenuno vacío");
+            }
+
+            if (descStr != null) {
+                descs.addAll(l.capturarListaDePref(descStr));
+            } else {
+                System.out.println("descripcionimagenuno vacío");
+            }
+
             seeDataInTable();
 
         } catch (Exception e) {
@@ -361,7 +381,6 @@ public class configuracionSistemas extends javax.swing.JFrame {
                 boton.setVisible(true);
                 ActionListener listener = new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println("hello");
                     }
                 };
                 boton.addActionListener(listener);
